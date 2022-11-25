@@ -10,29 +10,29 @@ using System.Windows.Forms;
 
 namespace FinalOOP2Project
 {
-    public partial class Form1 : Form
+    public partial class ManagerLogin : Form
     {
-        public Form1()
+        public ManagerLogin()
         {
             InitializeComponent();
         }
         MovieTheatreDataClassDataContext db = new MovieTheatreDataClassDataContext();
-        private void loginButton_Click(object sender, EventArgs e)
+        private void loginManagerButton_Click(object sender, EventArgs e)
         {
             try
             {
-                if (userTextBox.Text == "" && passTextBox.Text == "")
+                if (userManagerTextBox.Text == "" && passManagerTextBox.Text == "")
                 {
                     MessageBox.Show("Incorrect Username or Password");
                 }
                 else
                 {
-                    var login = (from u in db.Users
-                                 where u.Username == userTextBox.Text
+                    var login = (from u in db.Managers
+                                 where u.ManagerUsername == userManagerTextBox.Text
                                  select u).First();
-                    if (login.Username == userTextBox.Text && login.Password == passTextBox.Text)
+                    if (login.ManagerUsername == userManagerTextBox.Text && login.ManagerPassword == passManagerTextBox.Text)
                     {
-                        MessageBox.Show("YESSSS!!!");
+                        MessageBox.Show("YESSSS!!! BUT FOR MANAGER");
                     }
                     else
                     {
@@ -43,18 +43,6 @@ namespace FinalOOP2Project
             catch (Exception ex)
             {
                 MessageBox.Show("Incorrect Username or Password");
-        }   }
-
-        private void managerLoginOpenLabel_Click(object sender, EventArgs e)
-        {
-            ManagerLogin ml = new ManagerLogin();
-            ml.Show();
-        }
-
-        private void registerOpenLabel_Click(object sender, EventArgs e)
-        {
-            Register r = new Register();
-            r.Show();
-        }
+        }  }
     }
 }
