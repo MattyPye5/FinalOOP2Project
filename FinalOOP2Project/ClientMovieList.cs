@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace FinalOOP2Project
 {
-    public partial class ManagerShowTime : Form
+    public partial class ClientMovieList : Form
     {
-        public ManagerShowTime()
+        public ClientMovieList()
         {
             InitializeComponent();
         }
@@ -27,6 +27,10 @@ namespace FinalOOP2Project
 
         private void ManagerShowTime_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'movie_FinalDB_ProjectDataSet.Movies' table. You can move, or remove it, as needed.
+            this.moviesTableAdapter.Fill(this.movie_FinalDB_ProjectDataSet.Movies);
+            // TODO: This line of code loads data into the 'movie_FinalDB_ProjectDataSet.Movies' table. You can move, or remove it, as needed.
+            this.moviesTableAdapter.Fill(this.movie_FinalDB_ProjectDataSet.Movies);
             // TODO: This line of code loads data into the 'movie_FinalDB_ProjectDataSet.ShowTime' table. You can move, or remove it, as needed.
             this.showTimeTableAdapter.Fill(this.movie_FinalDB_ProjectDataSet.ShowTime);
 
