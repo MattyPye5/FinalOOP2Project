@@ -39,7 +39,7 @@ namespace FinalOOP2Project
     #endregion
 		
 		public MovieTheatreDataClassDataContext() : 
-				base(global::FinalOOP2Project.Properties.Settings.Default.Movie_FinalDB_ProjectConnectionString, mappingSource)
+				base(global::FinalOOP2Project.Properties.Settings.Default.Movie_FinalDB_ProjectConnectionString1, mappingSource)
 		{
 			OnCreated();
 		}

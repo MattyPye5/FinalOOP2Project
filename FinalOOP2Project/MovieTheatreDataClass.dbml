@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="Movie_FinalDB_Project" Class="MovieTheatreDataClassDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="AppSettings" ConnectionString="Data Source=.\SQLEXPRESS;AttachDbFilename=|DataDirectory|\Movie_FinalDB_Project.mdf;Integrated Security=True;Connect Timeout=30;User Instance=True" SettingsObjectName="FinalOOP2Project.Properties.Settings" SettingsPropertyName="Movie_FinalDB_ProjectConnectionString" Provider="System.Data.SqlClient" />
+  <Connection Mode="AppSettings" ConnectionString="Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\Movie_FinalDB_Project.mdf;Integrated Security=True;Connect Timeout=30" SettingsObjectName="FinalOOP2Project.Properties.Settings" SettingsPropertyName="Movie_FinalDB_ProjectConnectionString1" Provider="System.Data.SqlClient" />
   <Table Name="dbo.[User]" Member="Users">
     <Type Name="User">
       <Column Name="UserId" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
