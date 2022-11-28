@@ -79,6 +79,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>MovieTheatreDataClass.dbml</DependentUpon>
     </Compile>
+    <Compile Include="Movie_FinalDB_ProjectDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Movie_FinalDB_ProjectDataSet1.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Register.cs">
@@ -112,6 +117,17 @@
     </None>
     <None Include="MovieTheatreDataClass.dbml.layout">
       <DependentUpon>MovieTheatreDataClass.dbml</DependentUpon>
+    </None>
+    <None Include="Movie_FinalDB_ProjectDataSet1.xsc">
+      <DependentUpon>Movie_FinalDB_ProjectDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="Movie_FinalDB_ProjectDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Movie_FinalDB_ProjectDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Movie_FinalDB_ProjectDataSet1.xss">
+      <DependentUpon>Movie_FinalDB_ProjectDataSet1.xsd</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
