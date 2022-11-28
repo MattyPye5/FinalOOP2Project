@@ -21,11 +21,14 @@ namespace FinalOOP2Project
         {
             try
             {
-                if (userManagerTextBox.Text == "" && passManagerTextBox.Text == "")
+                if (userManagerTextBox.Text == "")
                 {
-                    MessageBox.Show("Incorrect Username or Password");
+                    MessageBox.Show("Please enter the username");
                 }
-                else
+                else if (passManagerTextBox.Text == "")
+                {
+                    MessageBox.Show("Please enter the password");
+                }else
                 {
                     var login = (from u in db.Managers
                                  where u.ManagerUsername == userManagerTextBox.Text
@@ -44,5 +47,10 @@ namespace FinalOOP2Project
             {
                 MessageBox.Show("Incorrect Username or Password");
         }  }
+
+        private void ManagerLogin_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

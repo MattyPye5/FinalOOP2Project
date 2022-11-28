@@ -21,9 +21,13 @@ namespace FinalOOP2Project
         {
             try
             {
-                if (userTextBox.Text == "" && passTextBox.Text == "")
+                if (userTextBox.Text == "")
                 {
-                    MessageBox.Show("Incorrect Username or Password");
+                    MessageBox.Show("Please enter the username");
+                }
+                else if (passTextBox.Text == "")
+                {
+                    MessageBox.Show("Please enter the password");
                 }
                 else
                 {
@@ -55,6 +59,11 @@ namespace FinalOOP2Project
         {
             Register r = new Register();
             r.Show();
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
