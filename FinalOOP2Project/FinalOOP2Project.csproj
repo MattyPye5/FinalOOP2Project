@@ -62,6 +62,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ClientMovieList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ClientMovieList.Designer.cs">
+      <DependentUpon>ClientMovieList.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -74,16 +80,15 @@
     <Compile Include="ManagerLogin.Designer.cs">
       <DependentUpon>ManagerLogin.cs</DependentUpon>
     </Compile>
-    <Compile Include="ManagerShowTime.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ManagerShowTime.Designer.cs">
-      <DependentUpon>ManagerShowTime.cs</DependentUpon>
-    </Compile>
     <Compile Include="MovieTheatreDataClass.designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>MovieTheatreDataClass.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="Movie_FinalDB_ProjectDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Movie_FinalDB_ProjectDataSet1.xsd</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -93,14 +98,14 @@
     <Compile Include="Register.Designer.cs">
       <DependentUpon>Register.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="ClientMovieList.resx">
+      <DependentUpon>ClientMovieList.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ManagerLogin.resx">
       <DependentUpon>ManagerLogin.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ManagerShowTime.resx">
-      <DependentUpon>ManagerShowTime.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -121,6 +126,17 @@
     </None>
     <None Include="MovieTheatreDataClass.dbml.layout">
       <DependentUpon>MovieTheatreDataClass.dbml</DependentUpon>
+    </None>
+    <None Include="Movie_FinalDB_ProjectDataSet1.xsc">
+      <DependentUpon>Movie_FinalDB_ProjectDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="Movie_FinalDB_ProjectDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Movie_FinalDB_ProjectDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Movie_FinalDB_ProjectDataSet1.xss">
+      <DependentUpon>Movie_FinalDB_ProjectDataSet1.xsd</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
