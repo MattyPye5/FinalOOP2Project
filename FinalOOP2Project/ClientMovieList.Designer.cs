@@ -270,7 +270,7 @@
             this.buyButton.TabIndex = 14;
             this.buyButton.Text = "Buy";
             this.buyButton.UseVisualStyleBackColor = false;
-
+            this.buyButton.Click += new System.EventHandler(this.buyButton_Click);
             // 
             // logoutButton
             // 
@@ -282,7 +282,7 @@
             this.logoutButton.TabIndex = 15;
             this.logoutButton.Text = "Logout";
             this.logoutButton.UseVisualStyleBackColor = false;
-
+            this.logoutButton.Click += new System.EventHandler(this.logoutButton_Click);
             // 
             // ClientMovieList
             // 
