@@ -16,7 +16,9 @@ namespace FinalOOP2Project
         {
             InitializeComponent();
         }
+
         MovieTheatreDataClassDataContext db = new MovieTheatreDataClassDataContext();
+
         private void loginButton_Click(object sender, EventArgs e)
         {
             try
@@ -36,6 +38,7 @@ namespace FinalOOP2Project
                                  select u).First();
                     if (login.Username == userTextBox.Text && login.Password == passTextBox.Text)
                     {
+                        this.Hide();
                         MessageBox.Show("YESSSS!!!");
                     }
                     else
@@ -47,7 +50,9 @@ namespace FinalOOP2Project
             catch (Exception ex)
             {
                 MessageBox.Show("Incorrect Username or Password");
-        }   }
+            }
+
+        }
 
         private void managerLoginOpenLabel_Click(object sender, EventArgs e)
         {

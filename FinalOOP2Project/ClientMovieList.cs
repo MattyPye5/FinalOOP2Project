@@ -69,20 +69,5 @@ namespace FinalOOP2Project
         {
 
         }
-
-        private void buyButton_Click(object sender, EventArgs e)
-        {
-            if(moviesDataGridView1.SelectedRows.Count > 0)
-            {
-                MessageBox.Show(moviesDataGridView1.SelectedRows.ToString());
-            }
-        }
-
-        private void logoutButton_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            Form1 myForm = new Form1();
-            myForm.ShowDialog();
-        }
     }
 }
