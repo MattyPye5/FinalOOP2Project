@@ -14,4 +14,23 @@
       <Column Name="ManagerPassword" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
     </Type>
   </Table>
+  <Table Name="dbo.Movies" Member="Movies">
+    <Type Name="Movie">
+      <Column Name="MovieId" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="MovieName" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Genre" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="DateOfRelease" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Actors" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Association Name="Movie_ScreenRoom" Member="ScreenRooms" ThisKey="MovieId" OtherKey="MovieId" Type="ScreenRoom" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ScreenRoom" Member="ScreenRooms">
+    <Type Name="ScreenRoom">
+      <Column Name="ScreenRoomId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="MovieId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="RoomNo" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="TotalSeatNo" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="Movie_ScreenRoom" Member="Movie" ThisKey="MovieId" OtherKey="MovieId" Type="Movie" IsForeignKey="true" />
+    </Type>
+  </Table>
 </Database>

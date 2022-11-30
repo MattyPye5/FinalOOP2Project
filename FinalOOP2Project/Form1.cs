@@ -19,6 +19,7 @@ namespace FinalOOP2Project
         MovieTheatreDataClassDataContext db = new MovieTheatreDataClassDataContext();
         private void loginButton_Click(object sender, EventArgs e)
         {
+
             try
             {
                 if (userTextBox.Text == "")
