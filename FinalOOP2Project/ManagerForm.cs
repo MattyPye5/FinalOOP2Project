@@ -16,5 +16,32 @@ namespace FinalOOP2Project
         {
             InitializeComponent();
         }
+
+        private void ticketsButton_Click(object sender, EventArgs e)
+        {
+            TicketForm myTicket = new TicketForm();
+            myTicket.Show();
+        }
+
+        private void screenRoomButton_Click(object sender, EventArgs e)
+        {
+            ScreenRoomForm myScreenRoom = new ScreenRoomForm();
+            myScreenRoom.ShowDialog();
+        }
+
+        private void moviesButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void showtimeButton_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void exitButton_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

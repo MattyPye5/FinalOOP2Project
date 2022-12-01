@@ -48,6 +48,7 @@
             this.exitButton.TabIndex = 17;
             this.exitButton.Text = "Exit";
             this.exitButton.UseVisualStyleBackColor = true;
+            this.exitButton.Click += new System.EventHandler(this.exitButton_Click);
             // 
             // clientButton
             // 
@@ -72,30 +73,33 @@
             this.showtimeButton.TabIndex = 15;
             this.showtimeButton.Text = "Showtime ";
             this.showtimeButton.UseVisualStyleBackColor = true;
+            this.showtimeButton.Click += new System.EventHandler(this.showtimeButton_Click);
             // 
             // ticketsButton
             // 
             this.ticketsButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.ticketsButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ticketsButton.ForeColor = System.Drawing.Color.IndianRed;
-            this.ticketsButton.Location = new System.Drawing.Point(444, 158);
+            this.ticketsButton.Location = new System.Drawing.Point(433, 158);
             this.ticketsButton.Name = "ticketsButton";
             this.ticketsButton.Size = new System.Drawing.Size(182, 53);
             this.ticketsButton.TabIndex = 14;
             this.ticketsButton.Text = "Tickets";
             this.ticketsButton.UseVisualStyleBackColor = true;
+            this.ticketsButton.Click += new System.EventHandler(this.ticketsButton_Click);
             // 
             // screenRoomButton
             // 
             this.screenRoomButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.screenRoomButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.screenRoomButton.ForeColor = System.Drawing.Color.IndianRed;
-            this.screenRoomButton.Location = new System.Drawing.Point(453, 57);
+            this.screenRoomButton.Location = new System.Drawing.Point(433, 57);
             this.screenRoomButton.Name = "screenRoomButton";
             this.screenRoomButton.Size = new System.Drawing.Size(182, 53);
             this.screenRoomButton.TabIndex = 13;
             this.screenRoomButton.Text = "Screen Room";
             this.screenRoomButton.UseVisualStyleBackColor = true;
+            this.screenRoomButton.Click += new System.EventHandler(this.screenRoomButton_Click);
             // 
             // moviesButton
             // 
@@ -108,6 +112,7 @@
             this.moviesButton.TabIndex = 12;
             this.moviesButton.Text = "Movies";
             this.moviesButton.UseVisualStyleBackColor = true;
+            this.moviesButton.Click += new System.EventHandler(this.moviesButton_Click);
             // 
             // ManagerForm
             // 
