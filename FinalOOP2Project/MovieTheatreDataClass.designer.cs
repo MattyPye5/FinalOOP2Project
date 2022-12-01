@@ -36,16 +36,10 @@ namespace FinalOOP2Project
     partial void InsertManager(Manager instance);
     partial void UpdateManager(Manager instance);
     partial void DeleteManager(Manager instance);
-    partial void InsertMovie(Movie instance);
-    partial void UpdateMovie(Movie instance);
-    partial void DeleteMovie(Movie instance);
-    partial void InsertScreenRoom(ScreenRoom instance);
-    partial void UpdateScreenRoom(ScreenRoom instance);
-    partial void DeleteScreenRoom(ScreenRoom instance);
     #endregion
 		
 		public MovieTheatreDataClassDataContext() : 
-				base(global::FinalOOP2Project.Properties.Settings.Default.Movie_FinalDB_ProjectConnectionString, mappingSource)
+				base(global::FinalOOP2Project.Properties.Settings.Default.Movie_FinalDB_ProjectConnectionString1, mappingSource)
 		{
 			OnCreated();
 		}
@@ -89,22 +83,7 @@ namespace FinalOOP2Project
 				return this.GetTable<Manager>();
 			}
 		}
-		
-		public System.Data.Linq.Table<Movie> Movies
-		{
-			get
-			{
-				return this.GetTable<Movie>();
-			}
-		}
-		
-		public System.Data.Linq.Table<ScreenRoom> ScreenRooms
-		{
-			get
-			{
 				return this.GetTable<ScreenRoom>();
-			}
-		}
 	}
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.[User]")]
