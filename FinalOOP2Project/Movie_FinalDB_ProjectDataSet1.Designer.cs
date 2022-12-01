@@ -44,6 +44,8 @@ namespace FinalOOP2Project {
         
         private global::System.Data.DataRelation relationfk_screenroom;
         
+        private global::System.Data.DataRelation relationUser_MovieTicketUser;
+        
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -347,6 +349,7 @@ namespace FinalOOP2Project {
             this.relationFK_MovieTicketUser = this.Relations["FK_MovieTicketUser"];
             this.relationFK_ScreenRoom_Movie = this.Relations["FK_ScreenRoom_Movie"];
             this.relationfk_screenroom = this.Relations["fk_screenroom"];
+            this.relationUser_MovieTicketUser = this.Relations["User_MovieTicketUser"];
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -383,6 +386,10 @@ namespace FinalOOP2Project {
                         this.tableScreenRoom.ScreenRoomIdColumn}, new global::System.Data.DataColumn[] {
                         this.tableShowTime.ScreenRoomIdColumn}, false);
             this.Relations.Add(this.relationfk_screenroom);
+            this.relationUser_MovieTicketUser = new global::System.Data.DataRelation("User_MovieTicketUser", new global::System.Data.DataColumn[] {
+                        this.tableUser.UserIdColumn}, new global::System.Data.DataColumn[] {
+                        this.tableMovieTicketUser.UserIdColumn}, false);
+            this.Relations.Add(this.relationUser_MovieTicketUser);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1219,14 +1226,17 @@ namespace FinalOOP2Project {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public MovieTicketUserRow AddMovieTicketUserRow(int MovieId, TicketRow parentTicketRowByFK_MovieTicketUser, int UserId) {
+            public MovieTicketUserRow AddMovieTicketUserRow(int MovieId, TicketRow parentTicketRowByFK_MovieTicketUser, UserRow parentUserRowByUser_MovieTicketUser) {
                 MovieTicketUserRow rowMovieTicketUserRow = ((MovieTicketUserRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         MovieId,
                         null,
-                        UserId};
+                        null};
                 if ((parentTicketRowByFK_MovieTicketUser != null)) {
                     columnValuesArray[1] = parentTicketRowByFK_MovieTicketUser[0];
+                }
+                if ((parentUserRowByUser_MovieTicketUser != null)) {
+                    columnValuesArray[2] = parentUserRowByUser_MovieTicketUser[0];
                 }
                 rowMovieTicketUserRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowMovieTicketUserRow);
@@ -2826,6 +2836,17 @@ namespace FinalOOP2Project {
                     this.SetParentRow(value, this.Table.ParentRelations["FK_MovieTicketUser"]);
                 }
             }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public UserRow UserRow {
+                get {
+                    return ((UserRow)(this.GetParentRow(this.Table.ParentRelations["User_MovieTicketUser"])));
+                }
+                set {
+                    this.SetParentRow(value, this.Table.ParentRelations["User_MovieTicketUser"]);
+                }
+            }
         }
         
         /// <summary>
@@ -3134,6 +3155,17 @@ namespace FinalOOP2Project {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public void SetPasswordNull() {
                 this[this.tableUser.PasswordColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public MovieTicketUserRow[] GetMovieTicketUserRows() {
+                if ((this.Table.ChildRelations["User_MovieTicketUser"] == null)) {
+                    return new MovieTicketUserRow[0];
+                }
+                else {
+                    return ((MovieTicketUserRow[])(base.GetChildRows(this.Table.ChildRelations["User_MovieTicketUser"])));
+                }
             }
         }
         
@@ -6044,6 +6076,15 @@ SELECT UserId, Username, Password FROM [User] WHERE (UserId = @UserId)";
                     allChangedRows.AddRange(updatedRows);
                 }
             }
+            if ((this._userTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.User.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
+                if (((updatedRows != null) 
+                            && (0 < updatedRows.Length))) {
+                    result = (result + this._userTableAdapter.Update(updatedRows));
+                    allChangedRows.AddRange(updatedRows);
+                }
+            }
             if ((this._managerTableAdapter != null)) {
                 global::System.Data.DataRow[] updatedRows = dataSet.Manager.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
@@ -6068,15 +6109,6 @@ SELECT UserId, Username, Password FROM [User] WHERE (UserId = @UserId)";
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
                     result = (result + this._showTimeTableAdapter.Update(updatedRows));
-                    allChangedRows.AddRange(updatedRows);
-                }
-            }
-            if ((this._userTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.User.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
-                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
-                if (((updatedRows != null) 
-                            && (0 < updatedRows.Length))) {
-                    result = (result + this._userTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
@@ -6114,6 +6146,14 @@ SELECT UserId, Username, Password FROM [User] WHERE (UserId = @UserId)";
                     allAddedRows.AddRange(addedRows);
                 }
             }
+            if ((this._userTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.User.Select(null, null, global::System.Data.DataViewRowState.Added);
+                if (((addedRows != null) 
+                            && (0 < addedRows.Length))) {
+                    result = (result + this._userTableAdapter.Update(addedRows));
+                    allAddedRows.AddRange(addedRows);
+                }
+            }
             if ((this._managerTableAdapter != null)) {
                 global::System.Data.DataRow[] addedRows = dataSet.Manager.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
@@ -6138,14 +6178,6 @@ SELECT UserId, Username, Password FROM [User] WHERE (UserId = @UserId)";
                     allAddedRows.AddRange(addedRows);
                 }
             }
-            if ((this._userTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.User.Select(null, null, global::System.Data.DataViewRowState.Added);
-                if (((addedRows != null) 
-                            && (0 < addedRows.Length))) {
-                    result = (result + this._userTableAdapter.Update(addedRows));
-                    allAddedRows.AddRange(addedRows);
-                }
-            }
             return result;
         }
         
@@ -6156,14 +6188,6 @@ SELECT UserId, Username, Password FROM [User] WHERE (UserId = @UserId)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private int UpdateDeletedRows(Movie_FinalDB_ProjectDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
             int result = 0;
-            if ((this._userTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.User.Select(null, null, global::System.Data.DataViewRowState.Deleted);
-                if (((deletedRows != null) 
-                            && (0 < deletedRows.Length))) {
-                    result = (result + this._userTableAdapter.Update(deletedRows));
-                    allChangedRows.AddRange(deletedRows);
-                }
-            }
             if ((this._showTimeTableAdapter != null)) {
                 global::System.Data.DataRow[] deletedRows = dataSet.ShowTime.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
@@ -6185,6 +6209,14 @@ SELECT UserId, Username, Password FROM [User] WHERE (UserId = @UserId)";
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
                     result = (result + this._managerTableAdapter.Update(deletedRows));
+                    allChangedRows.AddRange(deletedRows);
+                }
+            }
+            if ((this._userTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.User.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+                if (((deletedRows != null) 
+                            && (0 < deletedRows.Length))) {
+                    result = (result + this._userTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }

@@ -15,7 +15,7 @@
     </Type>
   </Table>
   <Table Name="dbo.Movies" Member="Movies">
-    <Type Name="Movie">
+    <Type Name="Movies">
       <Column Name="MovieId" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="MovieName" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
       <Column Name="Genre" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
@@ -30,7 +30,7 @@
       <Column Name="MovieId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="RoomNo" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="TotalSeatNo" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Association Name="Movie_ScreenRoom" Member="Movie" ThisKey="MovieId" OtherKey="MovieId" Type="Movie" IsForeignKey="true" />
+      <Association Name="Movie_ScreenRoom" Member="Movies" Storage="_Movie" ThisKey="MovieId" OtherKey="MovieId" Type="Movies" IsForeignKey="true" />
     </Type>
   </Table>
 </Database>

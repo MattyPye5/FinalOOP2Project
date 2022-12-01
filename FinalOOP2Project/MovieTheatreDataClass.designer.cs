@@ -36,9 +36,9 @@ namespace FinalOOP2Project
     partial void InsertManager(Manager instance);
     partial void UpdateManager(Manager instance);
     partial void DeleteManager(Manager instance);
-    partial void InsertMovie(Movie instance);
-    partial void UpdateMovie(Movie instance);
-    partial void DeleteMovie(Movie instance);
+    partial void InsertMovies(Movies instance);
+    partial void UpdateMovies(Movies instance);
+    partial void DeleteMovies(Movies instance);
     partial void InsertScreenRoom(ScreenRoom instance);
     partial void UpdateScreenRoom(ScreenRoom instance);
     partial void DeleteScreenRoom(ScreenRoom instance);
@@ -90,11 +90,11 @@ namespace FinalOOP2Project
 			}
 		}
 		
-		public System.Data.Linq.Table<Movie> Movies
+		public System.Data.Linq.Table<Movies> Movies
 		{
 			get
 			{
-				return this.GetTable<Movie>();
+				return this.GetTable<Movies>();
 			}
 		}
 		
@@ -328,7 +328,7 @@ namespace FinalOOP2Project
 	}
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Movies")]
-	public partial class Movie : INotifyPropertyChanging, INotifyPropertyChanged
+	public partial class Movies : INotifyPropertyChanging, INotifyPropertyChanged
 	{
 		
 		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
@@ -361,7 +361,7 @@ namespace FinalOOP2Project
     partial void OnActorsChanged();
     #endregion
 		
-		public Movie()
+		public Movies()
 		{
 			this._ScreenRooms = new EntitySet<ScreenRoom>(new Action<ScreenRoom>(this.attach_ScreenRooms), new Action<ScreenRoom>(this.detach_ScreenRooms));
 			OnCreated();
@@ -503,13 +503,13 @@ namespace FinalOOP2Project
 		private void attach_ScreenRooms(ScreenRoom entity)
 		{
 			this.SendPropertyChanging();
-			entity.Movie = this;
+			entity.Movies = this;
 		}
 		
 		private void detach_ScreenRooms(ScreenRoom entity)
 		{
 			this.SendPropertyChanging();
-			entity.Movie = null;
+			entity.Movies = null;
 		}
 	}
 	
@@ -527,7 +527,7 @@ namespace FinalOOP2Project
 		
 		private int _TotalSeatNo;
 		
-		private EntityRef<Movie> _Movie;
+		private EntityRef<Movies> _Movie;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
@@ -545,7 +545,7 @@ namespace FinalOOP2Project
 		
 		public ScreenRoom()
 		{
-			this._Movie = default(EntityRef<Movie>);
+			this._Movie = default(EntityRef<Movies>);
 			OnCreated();
 		}
 		
@@ -634,7 +634,7 @@ namespace FinalOOP2Project
 		}
 		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Movie_ScreenRoom", Storage="_Movie", ThisKey="MovieId", OtherKey="MovieId", IsForeignKey=true)]
-		public Movie Movie
+		public Movies Movies
 		{
 			get
 			{
@@ -642,7 +642,7 @@ namespace FinalOOP2Project
 			}
 			set
 			{
-				Movie previousValue = this._Movie.Entity;
+				Movies previousValue = this._Movie.Entity;
 				if (((previousValue != value) 
 							|| (this._Movie.HasLoadedOrAssignedValue == false)))
 				{
@@ -662,7 +662,7 @@ namespace FinalOOP2Project
 					{
 						this._MovieId = default(int);
 					}
-					this.SendPropertyChanged("Movie");
+					this.SendPropertyChanged("Movies");
 				}
 			}
 		}
