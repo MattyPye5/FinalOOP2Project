@@ -1,17 +1,36 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="Movie_FinalDB_Project" Class="MovieTheatreDataClassDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="AppSettings" ConnectionString="Data Source=.\SQLEXPRESS;AttachDbFilename=|DataDirectory|\Movie_FinalDB_Project.mdf;Integrated Security=True;Connect Timeout=30;User Instance=True" SettingsObjectName="FinalOOP2Project.Properties.Settings" SettingsPropertyName="Movie_FinalDB_ProjectConnectionString" Provider="System.Data.SqlClient" />
+  <Connection Mode="AppSettings" ConnectionString="Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\Movie_FinalDB_Project.mdf;Integrated Security=True;Connect Timeout=30" SettingsObjectName="FinalOOP2Project.Properties.Settings" SettingsPropertyName="Movie_FinalDB_ProjectConnectionString1" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.[User]" Member="Users">
+    <Type Name="User">
+      <Column Name="UserId" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Username" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Password" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
   <Table Name="dbo.Manager" Member="Managers">
     <Type Name="Manager">
       <Column Name="ManagerID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="ManagerUsername" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
       <Column Name="ManagerPassword" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+</Type>
+  </Table>
+  <Table Name="dbo.Movies" Member="Movies">
+    <Type Name="Movie">
+      <Column Name="MovieId" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="MovieName" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Genre" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="DateOfRelease" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Actors" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Association Name="Movie_ScreenRoom" Member="ScreenRooms" ThisKey="MovieId" OtherKey="MovieId" Type="ScreenRoom" />
     </Type>
   </Table>
-  <Table Name="dbo.[User]" Member="Users">
-    <Type Name="User">
-      <Column Name="UserId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="Username" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Name="Password" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+  <Table Name="dbo.ScreenRoom" Member="ScreenRooms">
+    <Type Name="ScreenRoom">
+      <Column Name="ScreenRoomId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="MovieId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="RoomNo" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="TotalSeatNo" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="Movie_ScreenRoom" Member="Movie" ThisKey="MovieId" OtherKey="MovieId" Type="Movie" IsForeignKey="true" />
     </Type>
   </Table>
 </Database>

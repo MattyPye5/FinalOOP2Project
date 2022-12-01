@@ -30,16 +30,16 @@ namespace FinalOOP2Project
 		
     #region Extensibility Method Definitions
     partial void OnCreated();
-    partial void InsertManager(Manager instance);
-    partial void UpdateManager(Manager instance);
-    partial void DeleteManager(Manager instance);
     partial void InsertUser(User instance);
     partial void UpdateUser(User instance);
     partial void DeleteUser(User instance);
+    partial void InsertManager(Manager instance);
+    partial void UpdateManager(Manager instance);
+    partial void DeleteManager(Manager instance);
     #endregion
 		
 		public MovieTheatreDataClassDataContext() : 
-				base(global::FinalOOP2Project.Properties.Settings.Default.Movie_FinalDB_ProjectConnectionString, mappingSource)
+				base(global::FinalOOP2Project.Properties.Settings.Default.Movie_FinalDB_ProjectConnectionString1, mappingSource)
 		{
 			OnCreated();
 		}
@@ -68,6 +68,14 @@ namespace FinalOOP2Project
 			OnCreated();
 		}
 		
+		public System.Data.Linq.Table<User> Users
+		{
+			get
+			{
+				return this.GetTable<User>();
+			}
+		}
+		
 		public System.Data.Linq.Table<Manager> Managers
 		{
 			get
@@ -75,12 +83,115 @@ namespace FinalOOP2Project
 				return this.GetTable<Manager>();
 			}
 		}
+				return this.GetTable<ScreenRoom>();
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.[User]")]
+	public partial class User : INotifyPropertyChanging, INotifyPropertyChanged
+	{
 		
-		public System.Data.Linq.Table<User> Users
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _UserId;
+		
+		private string _Username;
+		
+		private string _Password;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnUserIdChanging(int value);
+    partial void OnUserIdChanged();
+    partial void OnUsernameChanging(string value);
+    partial void OnUsernameChanged();
+    partial void OnPasswordChanging(string value);
+    partial void OnPasswordChanged();
+    #endregion
+		
+		public User()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UserId", DbType="Int NOT NULL", IsPrimaryKey=true)]
+		public int UserId
 		{
 			get
 			{
-				return this.GetTable<User>();
+				return this._UserId;
+			}
+			set
+			{
+				if ((this._UserId != value))
+				{
+					this.OnUserIdChanging(value);
+					this.SendPropertyChanging();
+					this._UserId = value;
+					this.SendPropertyChanged("UserId");
+					this.OnUserIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Username", DbType="VarChar(50)")]
+		public string Username
+		{
+			get
+			{
+				return this._Username;
+			}
+			set
+			{
+				if ((this._Username != value))
+				{
+					this.OnUsernameChanging(value);
+					this.SendPropertyChanging();
+					this._Username = value;
+					this.SendPropertyChanged("Username");
+					this.OnUsernameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Password", DbType="VarChar(50)")]
+		public string Password
+		{
+			get
+			{
+				return this._Password;
+			}
+			set
+			{
+				if ((this._Password != value))
+				{
+					this.OnPasswordChanging(value);
+					this.SendPropertyChanging();
+					this._Password = value;
+					this.SendPropertyChanged("Password");
+					this.OnPasswordChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
 		}
 	}
@@ -195,91 +306,342 @@ namespace FinalOOP2Project
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.[User]")]
-	public partial class User : INotifyPropertyChanging, INotifyPropertyChanged
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Movies")]
+	public partial class Movie : INotifyPropertyChanging, INotifyPropertyChanged
 	{
 		
 		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
 		
-		private int _UserId;
+		private int _MovieId;
 		
-		private string _Username;
+		private string _MovieName;
 		
-		private string _Password;
+		private string _Genre;
+		
+		private int _DateOfRelease;
+		
+		private string _Actors;
+		
+		private EntitySet<ScreenRoom> _ScreenRooms;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
     partial void OnCreated();
-    partial void OnUserIdChanging(int value);
-    partial void OnUserIdChanged();
-    partial void OnUsernameChanging(string value);
-    partial void OnUsernameChanged();
-    partial void OnPasswordChanging(string value);
-    partial void OnPasswordChanged();
+    partial void OnMovieIdChanging(int value);
+    partial void OnMovieIdChanged();
+    partial void OnMovieNameChanging(string value);
+    partial void OnMovieNameChanged();
+    partial void OnGenreChanging(string value);
+    partial void OnGenreChanged();
+    partial void OnDateOfReleaseChanging(int value);
+    partial void OnDateOfReleaseChanged();
+    partial void OnActorsChanging(string value);
+    partial void OnActorsChanged();
     #endregion
 		
-		public User()
+		public Movie()
 		{
+			this._ScreenRooms = new EntitySet<ScreenRoom>(new Action<ScreenRoom>(this.attach_ScreenRooms), new Action<ScreenRoom>(this.detach_ScreenRooms));
 			OnCreated();
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UserId", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int UserId
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MovieId", DbType="Int NOT NULL", IsPrimaryKey=true)]
+		public int MovieId
 		{
 			get
 			{
-				return this._UserId;
+				return this._MovieId;
 			}
 			set
 			{
-				if ((this._UserId != value))
+				if ((this._MovieId != value))
 				{
-					this.OnUserIdChanging(value);
+					this.OnMovieIdChanging(value);
 					this.SendPropertyChanging();
-					this._UserId = value;
-					this.SendPropertyChanged("UserId");
-					this.OnUserIdChanged();
+					this._MovieId = value;
+					this.SendPropertyChanged("MovieId");
+					this.OnMovieIdChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Username", DbType="VarChar(50)")]
-		public string Username
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MovieName", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+		public string MovieName
 		{
 			get
 			{
-				return this._Username;
+				return this._MovieName;
 			}
 			set
 			{
-				if ((this._Username != value))
+				if ((this._MovieName != value))
 				{
-					this.OnUsernameChanging(value);
+					this.OnMovieNameChanging(value);
 					this.SendPropertyChanging();
-					this._Username = value;
-					this.SendPropertyChanged("Username");
-					this.OnUsernameChanged();
+					this._MovieName = value;
+					this.SendPropertyChanged("MovieName");
+					this.OnMovieNameChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Password", DbType="VarChar(50)")]
-		public string Password
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Genre", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+		public string Genre
 		{
 			get
 			{
-				return this._Password;
+				return this._Genre;
 			}
 			set
 			{
-				if ((this._Password != value))
+				if ((this._Genre != value))
 				{
-					this.OnPasswordChanging(value);
+					this.OnGenreChanging(value);
 					this.SendPropertyChanging();
-					this._Password = value;
-					this.SendPropertyChanged("Password");
-					this.OnPasswordChanged();
+					this._Genre = value;
+					this.SendPropertyChanged("Genre");
+					this.OnGenreChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DateOfRelease", DbType="Int NOT NULL")]
+		public int DateOfRelease
+		{
+			get
+			{
+				return this._DateOfRelease;
+			}
+			set
+			{
+				if ((this._DateOfRelease != value))
+				{
+					this.OnDateOfReleaseChanging(value);
+					this.SendPropertyChanging();
+					this._DateOfRelease = value;
+					this.SendPropertyChanged("DateOfRelease");
+					this.OnDateOfReleaseChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Actors", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+		public string Actors
+		{
+			get
+			{
+				return this._Actors;
+			}
+			set
+			{
+				if ((this._Actors != value))
+				{
+					this.OnActorsChanging(value);
+					this.SendPropertyChanging();
+					this._Actors = value;
+					this.SendPropertyChanged("Actors");
+					this.OnActorsChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Movie_ScreenRoom", Storage="_ScreenRooms", ThisKey="MovieId", OtherKey="MovieId")]
+		public EntitySet<ScreenRoom> ScreenRooms
+		{
+			get
+			{
+				return this._ScreenRooms;
+			}
+			set
+			{
+				this._ScreenRooms.Assign(value);
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+		
+		private void attach_ScreenRooms(ScreenRoom entity)
+		{
+			this.SendPropertyChanging();
+			entity.Movie = this;
+		}
+		
+		private void detach_ScreenRooms(ScreenRoom entity)
+		{
+			this.SendPropertyChanging();
+			entity.Movie = null;
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.ScreenRoom")]
+	public partial class ScreenRoom : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _ScreenRoomId;
+		
+		private int _MovieId;
+		
+		private int _RoomNo;
+		
+		private int _TotalSeatNo;
+		
+		private EntityRef<Movie> _Movie;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnScreenRoomIdChanging(int value);
+    partial void OnScreenRoomIdChanged();
+    partial void OnMovieIdChanging(int value);
+    partial void OnMovieIdChanged();
+    partial void OnRoomNoChanging(int value);
+    partial void OnRoomNoChanged();
+    partial void OnTotalSeatNoChanging(int value);
+    partial void OnTotalSeatNoChanged();
+    #endregion
+		
+		public ScreenRoom()
+		{
+			this._Movie = default(EntityRef<Movie>);
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ScreenRoomId", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int ScreenRoomId
+		{
+			get
+			{
+				return this._ScreenRoomId;
+			}
+			set
+			{
+				if ((this._ScreenRoomId != value))
+				{
+					this.OnScreenRoomIdChanging(value);
+					this.SendPropertyChanging();
+					this._ScreenRoomId = value;
+					this.SendPropertyChanged("ScreenRoomId");
+					this.OnScreenRoomIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MovieId", DbType="Int NOT NULL")]
+		public int MovieId
+		{
+			get
+			{
+				return this._MovieId;
+			}
+			set
+			{
+				if ((this._MovieId != value))
+				{
+					if (this._Movie.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnMovieIdChanging(value);
+					this.SendPropertyChanging();
+					this._MovieId = value;
+					this.SendPropertyChanged("MovieId");
+					this.OnMovieIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RoomNo", DbType="Int NOT NULL")]
+		public int RoomNo
+		{
+			get
+			{
+				return this._RoomNo;
+			}
+			set
+			{
+				if ((this._RoomNo != value))
+				{
+					this.OnRoomNoChanging(value);
+					this.SendPropertyChanging();
+					this._RoomNo = value;
+					this.SendPropertyChanged("RoomNo");
+					this.OnRoomNoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TotalSeatNo", DbType="Int NOT NULL")]
+		public int TotalSeatNo
+		{
+			get
+			{
+				return this._TotalSeatNo;
+			}
+			set
+			{
+				if ((this._TotalSeatNo != value))
+				{
+					this.OnTotalSeatNoChanging(value);
+					this.SendPropertyChanging();
+					this._TotalSeatNo = value;
+					this.SendPropertyChanged("TotalSeatNo");
+					this.OnTotalSeatNoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Movie_ScreenRoom", Storage="_Movie", ThisKey="MovieId", OtherKey="MovieId", IsForeignKey=true)]
+		public Movie Movie
+		{
+			get
+			{
+				return this._Movie.Entity;
+			}
+			set
+			{
+				Movie previousValue = this._Movie.Entity;
+				if (((previousValue != value) 
+							|| (this._Movie.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._Movie.Entity = null;
+						previousValue.ScreenRooms.Remove(this);
+					}
+					this._Movie.Entity = value;
+					if ((value != null))
+					{
+						value.ScreenRooms.Add(this);
+						this._MovieId = value.MovieId;
+					}
+					else
+					{
+						this._MovieId = default(int);
+					}
+					this.SendPropertyChanged("Movie");
 				}
 			}
 		}
