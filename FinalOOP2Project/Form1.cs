@@ -38,6 +38,8 @@ namespace FinalOOP2Project
                     if (login.Username == userTextBox.Text && login.Password == passTextBox.Text)
                     {
                         MessageBox.Show("YESSSS!!!");
+                        ClientForm cf=new ClientForm();
+                        cf.ShowDialog();
                     }
                     else
                     {
