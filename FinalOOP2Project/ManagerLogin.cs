@@ -36,6 +36,8 @@ namespace FinalOOP2Project
                     if (login.ManagerUsername == userManagerTextBox.Text && login.ManagerPassword == passManagerTextBox.Text)
                     {
                         MessageBox.Show("YESSSS!!! BUT FOR MANAGER");
+                        ManagerForm manager = new ManagerForm();
+                        manager.ShowDialog();
                     }
                     else
                     {
