@@ -2,16 +2,16 @@
 <ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="MovieTheatreDataClass">
   <DataContextMoniker Name="/MovieTheatreDataClassDataContext" />
   <nestedChildShapes>
-    <classShape Id="21f3baac-7f79-4f4a-afef-04cc6c72e753" absoluteBounds="1, 1.125, 2, 1.3862939453125">
-      <DataClassMoniker Name="/MovieTheatreDataClassDataContext/User" />
-      <nestedChildShapes>
-        <elementListCompartment Id="5c29164e-baaa-42e0-8185-4d5611d7cba2" absoluteBounds="1.0150000000000001, 1.585, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
     <classShape Id="976f5fbc-29e1-48ec-ba7e-80fc28709fd7" absoluteBounds="1, 2.875, 2, 1.3862939453125">
       <DataClassMoniker Name="/MovieTheatreDataClassDataContext/Manager" />
       <nestedChildShapes>
         <elementListCompartment Id="2aa230d2-30b7-4e6e-a064-91d44d225cce" absoluteBounds="1.0150000000000001, 3.335, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="c85d66e8-68b4-43dc-a42b-579ae21c2f88" absoluteBounds="1, 1.25, 2, 1.3862939453125">
+      <DataClassMoniker Name="/MovieTheatreDataClassDataContext/User" />
+      <nestedChildShapes>
+        <elementListCompartment Id="eccc8948-877f-4425-89c6-79b1684b9bce" absoluteBounds="1.0150000000000001, 1.71, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
   </nestedChildShapes>
