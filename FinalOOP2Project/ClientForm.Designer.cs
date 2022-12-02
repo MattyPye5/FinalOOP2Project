@@ -39,13 +39,11 @@
             this.showTimeColumnHeader = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.moviesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.screenRoomBindingSource = new System.Windows.Forms.BindingSource(this.components);
-           // this.moviesBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.buyButton = new System.Windows.Forms.Button();
             this.logoutButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.moviesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.screenRoomBindingSource)).BeginInit();
-           // ((System.ComponentModel.ISupportInitialize)(this.moviesBindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // listView
@@ -69,7 +67,7 @@
             this.listView.TabIndex = 1;
             this.listView.UseCompatibleStateImageBehavior = false;
             this.listView.View = System.Windows.Forms.View.Details;
-            this.listView.SelectedIndexChanged += new System.EventHandler(this.listView_SelectedIndexChanged);
+            this.listView.SelectedIndexChanged += new System.EventHandler(this.listView_SelectedIndexChanged_1);
             // 
             // movieNameColumnHeader
             // 
@@ -107,12 +105,7 @@
             // 
             // screenRoomBindingSource
             // 
-           // this.screenRoomBindingSource.DataMember = "FK__ScreenRoo__Movie__04E4BC85";
             this.screenRoomBindingSource.DataSource = this.moviesBindingSource;
-            // 
-            // moviesBindingSource1
-            // 
-           // this.moviesBindingSource1.DataMember = "Movies";
             // 
             // buyButton
             // 
@@ -138,9 +131,8 @@
             this.logoutButton.TabIndex = 7;
             this.logoutButton.Text = "Logout";
             this.logoutButton.UseVisualStyleBackColor = true;
-            this.logoutButton.Click += new System.EventHandler(this.logoutButton_Click);
             // 
-            // ClientFormcs
+            // ClientForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -149,12 +141,11 @@
             this.Controls.Add(this.logoutButton);
             this.Controls.Add(this.buyButton);
             this.Controls.Add(this.listView);
-            this.Name = "ClientFormcs";
+            this.Name = "ClientForm";
             this.Text = "ClientFormcs";
             this.Load += new System.EventHandler(this.ClientFormcs_Load);
             ((System.ComponentModel.ISupportInitialize)(this.moviesBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.screenRoomBindingSource)).EndInit();
-            //((System.ComponentModel.ISupportInitialize)(this.moviesBindingSource1)).EndInit();
             this.ResumeLayout(false);
 
         }
