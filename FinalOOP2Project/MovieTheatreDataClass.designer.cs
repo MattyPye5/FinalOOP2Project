@@ -42,6 +42,12 @@ namespace FinalOOP2Project
     partial void InsertScreenRoom(ScreenRoom instance);
     partial void UpdateScreenRoom(ScreenRoom instance);
     partial void DeleteScreenRoom(ScreenRoom instance);
+    partial void InsertTicket(Ticket instance);
+    partial void UpdateTicket(Ticket instance);
+    partial void DeleteTicket(Ticket instance);
+    partial void InsertMovieTicketUser(MovieTicketUser instance);
+    partial void UpdateMovieTicketUser(MovieTicketUser instance);
+    partial void DeleteMovieTicketUser(MovieTicketUser instance);
     #endregion
 		
 		public MovieTheatreDataClassDataContext() : 
@@ -103,6 +109,22 @@ namespace FinalOOP2Project
 			get
 			{
 				return this.GetTable<ScreenRoom>();
+			}
+		}
+		
+		public System.Data.Linq.Table<Ticket> Tickets
+		{
+			get
+			{
+				return this.GetTable<Ticket>();
+			}
+		}
+		
+		public System.Data.Linq.Table<MovieTicketUser> MovieTicketUsers
+		{
+			get
+			{
+				return this.GetTable<MovieTicketUser>();
 			}
 		}
 	}
@@ -467,7 +489,7 @@ namespace FinalOOP2Project
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Movie_ScreenRoom", Storage="_ScreenRooms", ThisKey="MovieId", OtherKey="MovieId")]
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Movies_ScreenRoom", Storage="_ScreenRooms", ThisKey="MovieId", OtherKey="MovieId")]
 		public EntitySet<ScreenRoom> ScreenRooms
 		{
 			get
@@ -633,7 +655,7 @@ namespace FinalOOP2Project
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Movie_ScreenRoom", Storage="_Movie", ThisKey="MovieId", OtherKey="MovieId", IsForeignKey=true)]
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Movies_ScreenRoom", Storage="_Movie", ThisKey="MovieId", OtherKey="MovieId", IsForeignKey=true)]
 		public Movies Movies
 		{
 			get
@@ -663,6 +685,295 @@ namespace FinalOOP2Project
 						this._MovieId = default(int);
 					}
 					this.SendPropertyChanged("Movies");
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Ticket")]
+	public partial class Ticket : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _ticketId;
+		
+		private int _E_ticket;
+		
+		private string _availability;
+		
+		private EntitySet<MovieTicketUser> _MovieTicketUsers;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnticketIdChanging(int value);
+    partial void OnticketIdChanged();
+    partial void OnE_ticketChanging(int value);
+    partial void OnE_ticketChanged();
+    partial void OnavailabilityChanging(string value);
+    partial void OnavailabilityChanged();
+    #endregion
+		
+		public Ticket()
+		{
+			this._MovieTicketUsers = new EntitySet<MovieTicketUser>(new Action<MovieTicketUser>(this.attach_MovieTicketUsers), new Action<MovieTicketUser>(this.detach_MovieTicketUsers));
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ticketId", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int ticketId
+		{
+			get
+			{
+				return this._ticketId;
+			}
+			set
+			{
+				if ((this._ticketId != value))
+				{
+					this.OnticketIdChanging(value);
+					this.SendPropertyChanging();
+					this._ticketId = value;
+					this.SendPropertyChanged("ticketId");
+					this.OnticketIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_E_ticket", DbType="Int NOT NULL")]
+		public int E_ticket
+		{
+			get
+			{
+				return this._E_ticket;
+			}
+			set
+			{
+				if ((this._E_ticket != value))
+				{
+					this.OnE_ticketChanging(value);
+					this.SendPropertyChanging();
+					this._E_ticket = value;
+					this.SendPropertyChanged("E_ticket");
+					this.OnE_ticketChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_availability", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+		public string availability
+		{
+			get
+			{
+				return this._availability;
+			}
+			set
+			{
+				if ((this._availability != value))
+				{
+					this.OnavailabilityChanging(value);
+					this.SendPropertyChanging();
+					this._availability = value;
+					this.SendPropertyChanged("availability");
+					this.OnavailabilityChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Ticket_MovieTicketUser", Storage="_MovieTicketUsers", ThisKey="ticketId", OtherKey="TicketId")]
+		public EntitySet<MovieTicketUser> MovieTicketUsers
+		{
+			get
+			{
+				return this._MovieTicketUsers;
+			}
+			set
+			{
+				this._MovieTicketUsers.Assign(value);
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+		
+		private void attach_MovieTicketUsers(MovieTicketUser entity)
+		{
+			this.SendPropertyChanging();
+			entity.Ticket = this;
+		}
+		
+		private void detach_MovieTicketUsers(MovieTicketUser entity)
+		{
+			this.SendPropertyChanging();
+			entity.Ticket = null;
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.MovieTicketUser")]
+	public partial class MovieTicketUser : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _MovieId;
+		
+		private int _TicketId;
+		
+		private int _UserId;
+		
+		private EntityRef<Ticket> _Ticket;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnMovieIdChanging(int value);
+    partial void OnMovieIdChanged();
+    partial void OnTicketIdChanging(int value);
+    partial void OnTicketIdChanged();
+    partial void OnUserIdChanging(int value);
+    partial void OnUserIdChanged();
+    #endregion
+		
+		public MovieTicketUser()
+		{
+			this._Ticket = default(EntityRef<Ticket>);
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MovieId", DbType="Int NOT NULL", IsPrimaryKey=true)]
+		public int MovieId
+		{
+			get
+			{
+				return this._MovieId;
+			}
+			set
+			{
+				if ((this._MovieId != value))
+				{
+					this.OnMovieIdChanging(value);
+					this.SendPropertyChanging();
+					this._MovieId = value;
+					this.SendPropertyChanged("MovieId");
+					this.OnMovieIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TicketId", DbType="Int NOT NULL", IsPrimaryKey=true)]
+		public int TicketId
+		{
+			get
+			{
+				return this._TicketId;
+			}
+			set
+			{
+				if ((this._TicketId != value))
+				{
+					if (this._Ticket.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnTicketIdChanging(value);
+					this.SendPropertyChanging();
+					this._TicketId = value;
+					this.SendPropertyChanged("TicketId");
+					this.OnTicketIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UserId", DbType="Int NOT NULL", IsPrimaryKey=true)]
+		public int UserId
+		{
+			get
+			{
+				return this._UserId;
+			}
+			set
+			{
+				if ((this._UserId != value))
+				{
+					this.OnUserIdChanging(value);
+					this.SendPropertyChanging();
+					this._UserId = value;
+					this.SendPropertyChanged("UserId");
+					this.OnUserIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Ticket_MovieTicketUser", Storage="_Ticket", ThisKey="TicketId", OtherKey="ticketId", IsForeignKey=true)]
+		public Ticket Ticket
+		{
+			get
+			{
+				return this._Ticket.Entity;
+			}
+			set
+			{
+				Ticket previousValue = this._Ticket.Entity;
+				if (((previousValue != value) 
+							|| (this._Ticket.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._Ticket.Entity = null;
+						previousValue.MovieTicketUsers.Remove(this);
+					}
+					this._Ticket.Entity = value;
+					if ((value != null))
+					{
+						value.MovieTicketUsers.Add(this);
+						this._TicketId = value.ticketId;
+					}
+					else
+					{
+						this._TicketId = default(int);
+					}
+					this.SendPropertyChanged("Ticket");
 				}
 			}
 		}

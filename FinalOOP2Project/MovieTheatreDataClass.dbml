@@ -21,7 +21,7 @@
       <Column Name="Genre" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
       <Column Name="DateOfRelease" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="Actors" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
-      <Association Name="Movie_ScreenRoom" Member="ScreenRooms" ThisKey="MovieId" OtherKey="MovieId" Type="ScreenRoom" />
+      <Association Name="Movies_ScreenRoom" Member="ScreenRooms" ThisKey="MovieId" OtherKey="MovieId" Type="ScreenRoom" />
     </Type>
   </Table>
   <Table Name="dbo.ScreenRoom" Member="ScreenRooms">
@@ -30,7 +30,23 @@
       <Column Name="MovieId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="RoomNo" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="TotalSeatNo" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Association Name="Movie_ScreenRoom" Member="Movies" Storage="_Movie" ThisKey="MovieId" OtherKey="MovieId" Type="Movies" IsForeignKey="true" />
+      <Association Name="Movies_ScreenRoom" Member="Movies" Storage="_Movie" ThisKey="MovieId" OtherKey="MovieId" Type="Movies" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Ticket" Member="Tickets">
+    <Type Name="Ticket">
+      <Column Name="ticketId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="E_ticket" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="availability" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Association Name="Ticket_MovieTicketUser" Member="MovieTicketUsers" ThisKey="ticketId" OtherKey="TicketId" Type="MovieTicketUser" />
+    </Type>
+  </Table>
+  <Table Name="dbo.MovieTicketUser" Member="MovieTicketUsers">
+    <Type Name="MovieTicketUser">
+      <Column Name="MovieId" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="TicketId" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="UserId" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Association Name="Ticket_MovieTicketUser" Member="Ticket" ThisKey="TicketId" OtherKey="ticketId" Type="Ticket" IsForeignKey="true" />
     </Type>
   </Table>
 </Database>
