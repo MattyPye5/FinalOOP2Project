@@ -13,6 +13,7 @@ namespace FinalOOP2Project
 {
     public partial class ClientForm : Form
     {
+        MovieTheatreDataClassDataContext db = new MovieTheatreDataClassDataContext();
         List<string> movieNameList = new List<string>();
         List<string> genreList = new List<string>();
         List<string> actorList = new List<string>();
@@ -22,7 +23,7 @@ namespace FinalOOP2Project
         Screen_Room myRoom = new Screen_Room();
         ListViewItem list = new ListViewItem();
         Movie myMovie = new Movie();
-        MoviesTableAdapter movies = new MoviesTableAdapter();
+       
         List<Movie> moviesList = new List<Movie>();
         List<string> movieList = new List<string>();
         List<Movies> myList = new List<Movies>();
@@ -34,11 +35,8 @@ namespace FinalOOP2Project
 
         private void ClientFormcs_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'movieTheatreDataSet.ScreenRoom' table. You can move, or remove it, as needed.
-            //ScreenRoomTableAdapter.Fill(this.movieTheatreDataSet.ScreenRoom);
-            // TODO: This line of code loads data into the 'movieTheatreDataSet.Movies' table. You can move, or remove it, as needed.
-            // this.moviesTableAdapter.Fill(this.movieTheatreDataSet.Movies);
-            // MessageBox.Show(clientMoviesListViewItem.Columns.Count.ToString());
+            Form2 f = new Form2();
+            f.ShowDialog();
             try
             {
                 movieNameList = myMovie.GetMovieName();
@@ -48,16 +46,16 @@ namespace FinalOOP2Project
                 screenRoomList=myRoom.GetRoomNo();
                 try
                 {
-
-                    for (int i = 0; i < movieNameList.Count; i++)
+                    for (int i = 0; i <= movieNameList.Count; i++)
                     {
                         ListViewItem listi = new ListViewItem(movieNameList[i]);
+
                         listi.SubItems.Add(genreList[i]);
                         listi.SubItems.Add(actorList[i]);
                         listi.SubItems.Add(yearList[i].ToString());
                         listi.SubItems.Add(screenRoomList[i].ToString());
 
-                        listView.Items.Add((listi));
+                        listView.Items.Add(listi);
 
 
                     }
@@ -72,34 +70,51 @@ namespace FinalOOP2Project
             }
         }
 
-        private void listView_SelectedIndexChanged(object sender, EventArgs e)
+        private void listView_SelectedIndexChanged_1(object sender, EventArgs e)
         {
-           /* for (int i = 0; i < listView.Items.Count; i++)
+            for (int i = 0; i < listView.Items.Count; i++)
             {
                 if (listView.Items[i].Selected)
                 {
-                    MessageBox.Show(listView.Items[i].ToString());
-                    // MessageBox.Show("Hello");
-                     int roomNoi=  myRoom.GetRoomNo();
-                     int screenMovieIdi=  myRoom.GetMovieId();
-                     int movieMovieIdi=myMovie.GetMovieId();
-                    // if(screenMovieIdi==movieMovieIdi)
-                   // {
-                        //   MessageBox.Show("RoomNo",roomNoi.ToString());
-                   // }
-                    //MessageBox.Show(roomNo);
+                    MessageBox.Show(listView.Items[i].Text);
+                    string movie_name = listView.Items[i].Text;
+                    MessageBox.Show(movie_name);
+                    var movieId = from Movie in db.Movies
+                                  where Movie.MovieName==movie_name
+                                  select Movie.MovieId;
+                   
+                    foreach (var item in movieId)
+                    {
+                        MessageBox.Show(item.ToString());
+                        var myTicketId = from Movie in db.MovieTicketUsers
+                                       where Movie.MovieId == item
+                                       select Movie.TicketId;
+
+                        foreach (var id in myTicketId)
+                        {
+                            MessageBox.Show(id.ToString());
+                            var ticketNo = from Movie in db.Tickets
+                                           where Movie.ticketId == id
+                                           select Movie.E_ticket;
+
+                            foreach (var no in ticketNo)
+                            {
+                                MessageBox.Show(no.ToString());
+                            }
+                        }
+                    }
+
+                   
                 }
-            }*/
+
+            }
+           
         }
 
         private void buyButton_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void logoutButton_Click(object sender, EventArgs e)
-        {
-            this.Close();
+            E_TickeForm form = new E_TickeForm();
+            form.ShowDialog();
         }
     }
 }
