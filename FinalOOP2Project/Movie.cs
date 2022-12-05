@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace FinalOOP2Project
 {
@@ -20,6 +21,7 @@ namespace FinalOOP2Project
         private string genre;
         private DateTime dateOfRelease;
         private string actor;
+        private bool isSelected = false;
 
         public Movie() { }
         public string MovieName { get; set; }
@@ -28,11 +30,12 @@ namespace FinalOOP2Project
 
         public DateTime DateOfRelease { get; set; }
         public string Actor { get; set; }
-        public List<int> MovieIdList = new List<int>();
-        public List<string> MovieNameList = new List<string>();
-        public List<string> GenreList = new List<string>();
-        public List<int> YearList = new List<int>();
-        public List<string> ActorList = new List<string>();
+        public List<int> MovieIdList { get;set; }
+        public List<string> MovieNameList { get; set; }
+        public List<string> GenreList { get; set; }
+        public List<int> YearList { get; set; }
+        public List<string> ActorList { get; set; }
+       // public
         public void GetMovieId()
         {
             foreach (Movies item in db.Movies)
@@ -47,8 +50,8 @@ namespace FinalOOP2Project
 
             foreach (Movies item in db.Movies)
             {
-                movieNameList.Add(item.MovieName);
-                // MessageBox.Show(item.MovieName);
+                this.movieNameList.Add(item.MovieName);
+                 //MessageBox.Show(item.MovieName);
             }
 
             return movieNameList;
@@ -58,29 +61,29 @@ namespace FinalOOP2Project
 
             foreach (Movies item in db.Movies)
             {
-                ActorList.Add(item.Actors);
+                actorList.Add(item.Actors);
                 // MessageBox.Show(item.Genre);
             }
-            return ActorList;
+            return actorList;
         }
         public List<int> GetDateOfRelease()
         {
             foreach (Movies item in db.Movies)
             {
-                YearList.Add((item.DateOfRelease));
+                yearList.Add((item.DateOfRelease));
                 // MessageBox.Show(item.Genre);
             }
-            return YearList;
+            return yearList;
         }
         public List<string> GetGenre()
         {
 
             foreach (Movies item in db.Movies)
             {
-                GenreList.Add(item.Genre);
+                genreList.Add(item.Genre);
                 //  MessageBox.Show(item.Genre);
             }
-            return GenreList;
+            return genreList;
         }
     }
 }
