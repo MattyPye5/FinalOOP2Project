@@ -4,11 +4,15 @@ using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace FinalOOP2Project
 {
+   
     internal class Client_Ticket
     {
+        //MovieTheatreDataClassDataContext db = new MovieTheatreDataClassDataContext();
+        ClientForm form= new ClientForm();
         public Client_Ticket() { }
         public int TicketId { get; set; }
         public int ETicket { get; set; }
@@ -16,17 +20,22 @@ namespace FinalOOP2Project
         public string Availability { get; }
 
 
-       /* public string TicketsAvailable()
+        public void TicketsNo()
         {
-            MovieTheatreDataClassDataContext db= new MovieTheatreDataClassDataContext();
+            
+               
            
 
+                    
+
+                }
+            }
+                        
+
+           
+        }
 
 
-            return IsAvailable;
-        }*/
-
-
-    }
+    
    
-}
+
