@@ -98,6 +98,7 @@
             this.movieOutputLabel.Name = "movieOutputLabel";
             this.movieOutputLabel.Size = new System.Drawing.Size(100, 23);
             this.movieOutputLabel.TabIndex = 5;
+            this.movieOutputLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // timeLabel
             // 
@@ -179,11 +180,11 @@
         private System.Windows.Forms.Label ticketIdLabel;
         private System.Windows.Forms.Label ticketNoOutputLabel;
         private System.Windows.Forms.Label movieaLbel;
-        private System.Windows.Forms.Label movieOutputLabel;
         private System.Windows.Forms.Label timeLabel;
         private System.Windows.Forms.Label timeOutputLabel;
         private System.Windows.Forms.Label roomNoLabel;
         private System.Windows.Forms.Label roomNoOutputlabel;
         private System.Windows.Forms.Button closeButton;
+        public System.Windows.Forms.Label movieOutputLabel;
     }
 }
