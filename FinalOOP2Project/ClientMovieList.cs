@@ -38,7 +38,7 @@ namespace FinalOOP2Project
 
         private void closeButton_Click(object sender, EventArgs e)
         {
-            //close the form
+            //Close the form
             this.Close();
         }
 
@@ -65,9 +65,20 @@ namespace FinalOOP2Project
 
         }
 
-        private void moviesBindingSource1BindingNavigator_RefreshItems(object sender, EventArgs e)
-        {
 
+        private void buyButton_Click(object sender, EventArgs e)
+        {
+            if (moviesDataGridView1.SelectedRows.Count > 0)
+            {
+                MessageBox.Show(moviesDataGridView1.SelectedRows.ToString());
+            }
+        }
+
+        private void logoutButton_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Form1 myForm = new Form1();
+            myForm.ShowDialog();
         }
     }
 }

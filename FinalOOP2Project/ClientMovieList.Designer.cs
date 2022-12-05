@@ -117,7 +117,7 @@
             this.moviesBindingSource1BindingNavigator.Size = new System.Drawing.Size(564, 25);
             this.moviesBindingSource1BindingNavigator.TabIndex = 0;
             this.moviesBindingSource1BindingNavigator.Text = "bindingNavigator1";
-            this.moviesBindingSource1BindingNavigator.RefreshItems += new System.EventHandler(this.moviesBindingSource1BindingNavigator_RefreshItems);
+
             // 
             // bindingNavigatorAddNewItem
             // 
@@ -270,7 +270,7 @@
             this.buyButton.TabIndex = 14;
             this.buyButton.Text = "Buy";
             this.buyButton.UseVisualStyleBackColor = false;
-
+            this.buyButton.Click += new System.EventHandler(this.buyButton_Click);
             // 
             // logoutButton
             // 
@@ -282,7 +282,7 @@
             this.logoutButton.TabIndex = 15;
             this.logoutButton.Text = "Logout";
             this.logoutButton.UseVisualStyleBackColor = false;
-
+            this.logoutButton.Click += new System.EventHandler(this.logoutButton_Click);
             // 
             // ClientMovieList
             // 

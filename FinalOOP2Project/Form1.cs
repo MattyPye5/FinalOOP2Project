@@ -19,7 +19,6 @@ namespace FinalOOP2Project
         MovieTheatreDataClassDataContext db = new MovieTheatreDataClassDataContext();
         private void loginButton_Click(object sender, EventArgs e)
         {
-
             try
             {
                 if (userTextBox.Text == "")
@@ -50,7 +49,9 @@ namespace FinalOOP2Project
             catch (Exception ex)
             {
                 MessageBox.Show("Incorrect Username or Password");
-        }   }
+            }
+
+        }
 
         private void managerLoginOpenLabel_Click(object sender, EventArgs e)
         {
