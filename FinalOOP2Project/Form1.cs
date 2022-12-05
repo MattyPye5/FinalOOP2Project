@@ -37,7 +37,9 @@ namespace FinalOOP2Project
                                  select u).First();
                     if (login.Username == userTextBox.Text && login.Password == passTextBox.Text)
                     {
-                        MessageBox.Show("YESSSS!!!");
+                        //MessageBox.Show("YESSSS!!!");
+                        ClientMovieList myClientMovieList= new ClientMovieList();
+                        myClientMovieList.ShowDialog();
                     }
                     else
                     {
