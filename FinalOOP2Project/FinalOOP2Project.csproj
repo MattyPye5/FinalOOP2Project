@@ -48,8 +48,8 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="System">
-      <HintPath>..\..\..\..\..\..\..\..\..\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.dll</HintPath>
+    <Reference Include="System" />
+ <HintPath>c://Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.dll</HintPath>
     </Reference>
     <Reference Include="System.Core" />
     <Reference Include="System.Data.Linq" />
@@ -64,25 +64,32 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ClientFormcs.cs">
+ <Compile Include="ClientForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ClientFormcs.Designer.cs">
-      <DependentUpon>ClientFormcs.cs</DependentUpon>
+    <Compile Include="ClientForm.Designer.cs">
+      <DependentUpon>ClientForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="ClientMovieList.cs">
+    <Compile Include="E_TickeForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ClientMovieList.Designer.cs">
-      <DependentUpon>ClientMovieList.cs</DependentUpon>
+    <Compile Include="E_TickeForm.Designer.cs">
+      <DependentUpon>E_TickeForm.cs</DependentUpon>
     </Compile>
+    
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="ManagerForm.cs" />
+    <Compile Include="Form2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form2.Designer.cs">
+      <DependentUpon>Form2.cs</DependentUpon>
+    </Compile>
+      <Compile Include="ManagerForm.cs" />
     <Compile Include="ManagerForm.Designer.cs">
       <DependentUpon>ManagerForm.cs</DependentUpon>
     </Compile>
@@ -91,13 +98,15 @@
     </Compile>
     <Compile Include="ManagerLogin.Designer.cs">
       <DependentUpon>ManagerLogin.cs</DependentUpon>
+
     </Compile>
     <Compile Include="ManagerShowTime.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="ManagerShowTime.Designer.cs">
       <DependentUpon>ManagerShowTime.cs</DependentUpon>
-    </Compile>
+    </Compile>		                                                                                                                                                                              
+<Compile Include="Movie.cs" />
     <Compile Include="MovieTheatreDataClass.designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -116,14 +125,36 @@
     <Compile Include="Register.Designer.cs">
       <DependentUpon>Register.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="ClientFormcs.resx">
-      <DependentUpon>ClientFormcs.cs</DependentUpon>
+
+ <Compile Include="Screen_Room.cs" />
+    <Compile Include="ScreenRoomForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ScreenRoomForm.Designer.cs">
+      <DependentUpon>ScreenRoomForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Client_Ticket.cs" />
+    <Compile Include="TicketForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TicketForm.Designer.cs">
+      <DependentUpon>TicketForm.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="ClientForm.resx">
+      <DependentUpon>ClientForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ClientMovieList.resx">
+     <EmbeddedResource Include="ClientMovieList.resx">
       <DependentUpon>ClientMovieList.cs</DependentUpon>
+    </EmbeddedResource>
+
+    <EmbeddedResource Include="E_TickeForm.resx">
+      <DependentUpon>E_TickeForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+     <EmbeddedResource Include="Form2.resx">
+      <DependentUpon>Form2.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ManagerForm.resx">
       <DependentUpon>ManagerForm.cs</DependentUpon>
@@ -145,6 +176,12 @@
     </Compile>
     <EmbeddedResource Include="Register.resx">
       <DependentUpon>Register.cs</DependentUpon>
+    </EmbeddedResource>
+     <EmbeddedResource Include="ScreenRoomForm.resx">
+      <DependentUpon>ScreenRoomForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TicketForm.resx">
+      <DependentUpon>TicketForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="MovieTheatreDataClass.dbml">
       <Generator>MSLinqToSQLGenerator</Generator>
@@ -175,6 +212,7 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+  <None Include="stylecop.json" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
