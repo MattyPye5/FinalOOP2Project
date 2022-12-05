@@ -31,17 +31,23 @@ namespace FinalOOP2Project
 
         private void moviesButton_Click(object sender, EventArgs e)
         {
-
+            
         }
 
         private void showtimeButton_Click(object sender, EventArgs e)
         {
-            
+            ManagerShowTime myManagerShowTime = new ManagerShowTime();
+            myManagerShowTime.ShowDialog();
         }
 
         private void exitButton_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void clientButton_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
