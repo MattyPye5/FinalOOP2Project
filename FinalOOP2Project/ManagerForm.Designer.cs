@@ -106,7 +106,7 @@
             this.moviesButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.moviesButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.moviesButton.ForeColor = System.Drawing.Color.IndianRed;
-            this.moviesButton.Location = new System.Drawing.Point(72, 57);
+            this.moviesButton.Location = new System.Drawing.Point(61, 57);
             this.moviesButton.Name = "moviesButton";
             this.moviesButton.Size = new System.Drawing.Size(182, 53);
             this.moviesButton.TabIndex = 12;
@@ -119,7 +119,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(692, 450);
             this.Controls.Add(this.exitButton);
             this.Controls.Add(this.clientButton);
             this.Controls.Add(this.showtimeButton);
