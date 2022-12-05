@@ -117,7 +117,7 @@
             this.moviesBindingSource1BindingNavigator.Size = new System.Drawing.Size(564, 25);
             this.moviesBindingSource1BindingNavigator.TabIndex = 0;
             this.moviesBindingSource1BindingNavigator.Text = "bindingNavigator1";
-            this.moviesBindingSource1BindingNavigator.RefreshItems += new System.EventHandler(this.moviesBindingSource1BindingNavigator_RefreshItems);
+
             // 
             // bindingNavigatorAddNewItem
             // 
