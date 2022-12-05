@@ -88,6 +88,12 @@
     <Compile Include="ManagerLogin.Designer.cs">
       <DependentUpon>ManagerLogin.cs</DependentUpon>
     </Compile>
+    <Compile Include="ManagerShowTime.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ManagerShowTime.Designer.cs">
+      <DependentUpon>ManagerShowTime.cs</DependentUpon>
+    </Compile>
     <Compile Include="MovieTheatreDataClass.designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -97,6 +103,11 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Movie_FinalDB_ProjectDataSet1.xsd</DependentUpon>
+    </Compile>
+ <Compile Include="Movie_FinalDB_ProjectDataSet11.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Movie_FinalDB_ProjectDataSet11.xsd</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -117,6 +128,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ManagerLogin.resx">
       <DependentUpon>ManagerLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ManagerShowTime.resx">
+      <DependentUpon>ManagerShowTime.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -148,6 +162,17 @@
     </None>
     <None Include="Movie_FinalDB_ProjectDataSet1.xss">
       <DependentUpon>Movie_FinalDB_ProjectDataSet1.xsd</DependentUpon>
+</None>
+    <None Include="Movie_FinalDB_ProjectDataSet11.xsc">
+      <DependentUpon>Movie_FinalDB_ProjectDataSet11.xsd</DependentUpon>
+    </None>
+    <None Include="Movie_FinalDB_ProjectDataSet11.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Movie_FinalDB_ProjectDataSet11.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Movie_FinalDB_ProjectDataSet11.xss">
+      <DependentUpon>Movie_FinalDB_ProjectDataSet11.xsd</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

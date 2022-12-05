@@ -46,6 +46,7 @@
             this.loginRegisterButton.TabIndex = 19;
             this.loginRegisterButton.Text = "Sign Up!";
             this.loginRegisterButton.UseVisualStyleBackColor = false;
+            this.loginRegisterButton.Click += new System.EventHandler(this.loginRegisterButton_Click);
             // 
             // passwordLabel
             // 
