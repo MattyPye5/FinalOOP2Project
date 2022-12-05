@@ -1,5 +1,4 @@
-﻿using FinalOOP2Project.Movie_FinalDB_ProjectDataSetTableAdapters;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -23,11 +22,9 @@ namespace FinalOOP2Project
         Screen_Room myRoom = new Screen_Room();
         ListViewItem list = new ListViewItem();
         Movie myMovie = new Movie();
-       
-        List<Movie> moviesList = new List<Movie>();
-        List<string> movieList = new List<string>();
-        List<Movies> myList = new List<Movies>();
-        List<List<string>> myMovieList = new List<List<string>>();
+
+        // Client_Ticket ticket=new Client_Ticket();
+
         public ClientForm()
         {
             InitializeComponent();
@@ -35,15 +32,14 @@ namespace FinalOOP2Project
 
         private void ClientFormcs_Load(object sender, EventArgs e)
         {
-            Form2 f = new Form2();
-            f.ShowDialog();
+            MessageBox.Show("Hello");
             try
             {
                 movieNameList = myMovie.GetMovieName();
                 genreList = myMovie.GetGenre();
                 actorList = myMovie.GetActor();
                 yearList = myMovie.GetDateOfRelease();
-                screenRoomList=myRoom.GetRoomNo();
+                screenRoomList = myRoom.GetRoomNo();
                 try
                 {
                     for (int i = 0; i <= movieNameList.Count; i++)
@@ -59,7 +55,8 @@ namespace FinalOOP2Project
 
 
                     }
-                }catch(Exception ex) { }
+                }
+                catch (Exception ex) { }
 
 
 
@@ -72,49 +69,82 @@ namespace FinalOOP2Project
 
         private void listView_SelectedIndexChanged_1(object sender, EventArgs e)
         {
+            MessageBox.Show("The Ticket price is $20. If you want to continue click on Buy ticket.");
+        }
+        private void buyButton_Click(object sender, EventArgs e)
+        {
+            string movieName="";
+            int ticket = 0;
+            int room=0;
+
+
             for (int i = 0; i < listView.Items.Count; i++)
             {
                 if (listView.Items[i].Selected)
                 {
-                    MessageBox.Show(listView.Items[i].Text);
+                    // MessageBox.Show(listView.Items[i].Text);
+
                     string movie_name = listView.Items[i].Text;
-                    MessageBox.Show(movie_name);
-                    var movieId = from Movie in db.Movies
-                                  where Movie.MovieName==movie_name
+
+                    var movieid = from Movie in db.Movies
+                                  where Movie.MovieName.Equals(movie_name)
                                   select Movie.MovieId;
-                   
-                    foreach (var item in movieId)
+
+
+                    foreach (var str in movieid)
                     {
-                        MessageBox.Show(item.ToString());
-                        var myTicketId = from Movie in db.MovieTicketUsers
-                                       where Movie.MovieId == item
-                                       select Movie.TicketId;
+                        MessageBox.Show("movieId:" + str);
+                        var ticketid = from MovieTicketUser in db.MovieTicketUsers
+                                       where MovieTicketUser.MovieId.Equals(str)
+                                       select MovieTicketUser.TicketId;
+                       
 
-                        foreach (var id in myTicketId)
+                        foreach (var tic in ticketid)
                         {
-                            MessageBox.Show(id.ToString());
-                            var ticketNo = from Movie in db.Tickets
-                                           where Movie.ticketId == id
-                                           select Movie.E_ticket;
-
-                            foreach (var no in ticketNo)
+                            MessageBox.Show("ticketId:" + tic);
+                            var availableTicket = from Ticket in db.Tickets
+                                                  where Ticket.ticketId.Equals(tic) 
+                                                  select Ticket.availability;
+                            foreach(var available in availableTicket )
                             {
-                                MessageBox.Show(no.ToString());
+                                if (available.Equals("sold"))
+                                {
+                                    MessageBox.Show("There is no ticket available for this movie please choose another one.");
+                                }
+                                else if (available.Equals("available"))
+                                {
+                                    MessageBox.Show("available", available);
+                                    var ticketNo = from Ticket in db.Tickets
+                                                   where Ticket.ticketId.Equals(tic)
+                                                   select Ticket.E_ticket;
+                                    foreach (var no in ticketNo)
+                                    {
+                                        ticket = no;
+                                    }
+
+                                    movieName = movie_name;
+                                    var roomNO = from screenRoom in db.ScreenRooms
+                                                 where screenRoom.MovieId.Equals(str)
+                                                 select screenRoom.RoomNo;
+
+                                    foreach (var roomno in roomNO)
+                                    {
+                                        room = roomno;
+                                    }
+                                    E_TickeForm form = new E_TickeForm(movieName, ticket, room);
+                                    form.ShowDialog();
+                                }
                             }
                         }
                     }
-
-                   
                 }
-
             }
-           
         }
 
-        private void buyButton_Click(object sender, EventArgs e)
+        private void logoutButton_Click(object sender, EventArgs e)
         {
-            E_TickeForm form = new E_TickeForm();
-            form.ShowDialog();
+            this.Close();
         }
     }
 }
+
