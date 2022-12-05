@@ -51,7 +51,7 @@ namespace FinalOOP2Project
     #endregion
 		
 		public MovieTheatreDataClassDataContext() : 
-				base(global::FinalOOP2Project.Properties.Settings.Default.Movie_FinalDB_ProjectConnectionString, mappingSource)
+				base(global::FinalOOP2Project.Properties.Settings.Default.Movie_FinalDB_ProjectConnectionString1, mappingSource)
 		{
 			OnCreated();
 		}
@@ -350,7 +350,7 @@ namespace FinalOOP2Project
 	}
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Movies")]
-	public partial class Movies : INotifyPropertyChanging, INotifyPropertyChanged
+	public partial class Movie : INotifyPropertyChanging, INotifyPropertyChanged
 	{
 		
 		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
@@ -383,7 +383,7 @@ namespace FinalOOP2Project
     partial void OnActorsChanged();
     #endregion
 		
-		public Movies()
+		public Movie()
 		{
 			this._ScreenRooms = new EntitySet<ScreenRoom>(new Action<ScreenRoom>(this.attach_ScreenRooms), new Action<ScreenRoom>(this.detach_ScreenRooms));
 			OnCreated();
@@ -489,7 +489,7 @@ namespace FinalOOP2Project
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Movies_ScreenRoom", Storage="_ScreenRooms", ThisKey="MovieId", OtherKey="MovieId")]
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Movie_ScreenRoom", Storage="_ScreenRooms", ThisKey="MovieId", OtherKey="MovieId")]
 		public EntitySet<ScreenRoom> ScreenRooms
 		{
 			get
@@ -525,13 +525,13 @@ namespace FinalOOP2Project
 		private void attach_ScreenRooms(ScreenRoom entity)
 		{
 			this.SendPropertyChanging();
-			entity.Movies = this;
+			entity.Movie = this;
 		}
 		
 		private void detach_ScreenRooms(ScreenRoom entity)
 		{
 			this.SendPropertyChanging();
-			entity.Movies = null;
+			entity.Movie = null;
 		}
 	}
 	
@@ -549,7 +549,7 @@ namespace FinalOOP2Project
 		
 		private int _TotalSeatNo;
 		
-		private EntityRef<Movies> _Movie;
+		private EntityRef<Movie> _Movie;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
@@ -567,7 +567,7 @@ namespace FinalOOP2Project
 		
 		public ScreenRoom()
 		{
-			this._Movie = default(EntityRef<Movies>);
+			this._Movie = default(EntityRef<Movie>);
 			OnCreated();
 		}
 		
@@ -655,8 +655,8 @@ namespace FinalOOP2Project
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Movies_ScreenRoom", Storage="_Movie", ThisKey="MovieId", OtherKey="MovieId", IsForeignKey=true)]
-		public Movies Movies
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Movie_ScreenRoom", Storage="_Movie", ThisKey="MovieId", OtherKey="MovieId", IsForeignKey=true)]
+		public Movie Movie
 		{
 			get
 			{
@@ -664,7 +664,7 @@ namespace FinalOOP2Project
 			}
 			set
 			{
-				Movies previousValue = this._Movie.Entity;
+				Movie previousValue = this._Movie.Entity;
 				if (((previousValue != value) 
 							|| (this._Movie.HasLoadedOrAssignedValue == false)))
 				{
