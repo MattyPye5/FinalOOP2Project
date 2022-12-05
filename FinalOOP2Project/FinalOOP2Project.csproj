@@ -64,6 +64,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ClientFormcs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ClientFormcs.Designer.cs">
+      <DependentUpon>ClientFormcs.cs</DependentUpon>
+    </Compile>
     <Compile Include="ClientMovieList.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -112,6 +118,9 @@
     <Compile Include="Register.Designer.cs">
       <DependentUpon>Register.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="ClientFormcs.resx">
+      <DependentUpon>ClientFormcs.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ClientMovieList.resx">
       <DependentUpon>ClientMovieList.cs</DependentUpon>
     </EmbeddedResource>

@@ -44,7 +44,6 @@ namespace FinalOOP2Project {
         
         private global::System.Data.DataRelation relationfk_screenroom;
         
-
         private global::System.Data.DataRelation relationUser_MovieTicketUser;
         
         private global::System.Data.DataRelation relationMovies_MovieTicketUser;
@@ -352,10 +351,8 @@ namespace FinalOOP2Project {
             this.relationFK_MovieTicketUser = this.Relations["FK_MovieTicketUser"];
             this.relationFK_ScreenRoom_Movie = this.Relations["FK_ScreenRoom_Movie"];
             this.relationfk_screenroom = this.Relations["fk_screenroom"];
-
             this.relationUser_MovieTicketUser = this.Relations["User_MovieTicketUser"];
             this.relationMovies_MovieTicketUser = this.Relations["Movies_MovieTicketUser"];
-
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -392,17 +389,14 @@ namespace FinalOOP2Project {
                         this.tableScreenRoom.ScreenRoomIdColumn}, new global::System.Data.DataColumn[] {
                         this.tableShowTime.ScreenRoomIdColumn}, false);
             this.Relations.Add(this.relationfk_screenroom);
-
             this.relationUser_MovieTicketUser = new global::System.Data.DataRelation("User_MovieTicketUser", new global::System.Data.DataColumn[] {
                         this.tableUser.UserIdColumn}, new global::System.Data.DataColumn[] {
                         this.tableMovieTicketUser.UserIdColumn}, false);
             this.Relations.Add(this.relationUser_MovieTicketUser);
-
             this.relationMovies_MovieTicketUser = new global::System.Data.DataRelation("Movies_MovieTicketUser", new global::System.Data.DataColumn[] {
                         this.tableMovies.MovieIdColumn}, new global::System.Data.DataColumn[] {
                         this.tableMovieTicketUser.MovieIdColumn}, false);
             this.Relations.Add(this.relationMovies_MovieTicketUser);
-
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2866,7 +2860,6 @@ namespace FinalOOP2Project {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-
             public UserRow UserRow {
                 get {
                     return ((UserRow)(this.GetParentRow(this.Table.ParentRelations["User_MovieTicketUser"])));
@@ -2878,7 +2871,6 @@ namespace FinalOOP2Project {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-
             public MoviesRow MoviesRow {
                 get {
                     return ((MoviesRow)(this.GetParentRow(this.Table.ParentRelations["Movies_MovieTicketUser"])));
@@ -2887,14 +2879,12 @@ namespace FinalOOP2Project {
                     this.SetParentRow(value, this.Table.ParentRelations["Movies_MovieTicketUser"]);
                 }
             }
-
         }
-    
-
-    /// <summary>
-    ///Represents strongly named DataRow class.
-    ///</summary>
-    public partial class ScreenRoomRow : global::System.Data.DataRow {
+        
+        /// <summary>
+        ///Represents strongly named DataRow class.
+        ///</summary>
+        public partial class ScreenRoomRow : global::System.Data.DataRow {
             
             private ScreenRoomDataTable tableScreenRoom;
             
