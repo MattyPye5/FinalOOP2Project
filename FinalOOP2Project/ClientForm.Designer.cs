@@ -131,6 +131,7 @@
             this.logoutButton.TabIndex = 7;
             this.logoutButton.Text = "Logout";
             this.logoutButton.UseVisualStyleBackColor = true;
+            this.logoutButton.Click += new System.EventHandler(this.logoutButton_Click);
             // 
             // ClientForm
             // 
@@ -151,8 +152,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.ListView listView;
         private System.Windows.Forms.ColumnHeader movieNameColumnHeader;
         private System.Windows.Forms.ColumnHeader GenreColumnHeader;
         private System.Windows.Forms.ColumnHeader actorColumnHeader;
@@ -165,5 +164,6 @@
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private System.Windows.Forms.Button buyButton;
         private System.Windows.Forms.Button logoutButton;
+        public System.Windows.Forms.ListView listView;
     }
 }
