@@ -2888,23 +2888,13 @@ namespace FinalOOP2Project {
                 }
             }
 
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public UserRow UserRow {
-                get {
-                    return ((UserRow)(this.GetParentRow(this.Table.ParentRelations["User_MovieTicketUser"])));
-                }
-                set {
-                    this.SetParentRow(value, this.Table.ParentRelations["User_MovieTicketUser"]);
-                }
-            }
-
         }
-        
-        /// <summary>
-        ///Represents strongly named DataRow class.
-        ///</summary>
-        public partial class ScreenRoomRow : global::System.Data.DataRow {
+    
+
+    /// <summary>
+    ///Represents strongly named DataRow class.
+    ///</summary>
+    public partial class ScreenRoomRow : global::System.Data.DataRow {
             
             private ScreenRoomDataTable tableScreenRoom;
             

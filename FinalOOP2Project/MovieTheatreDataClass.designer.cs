@@ -83,7 +83,15 @@ namespace FinalOOP2Project
 				return this.GetTable<Manager>();
 			}
 		}
-				return this.GetTable<ScreenRoom>();
+
+        public System.Data.Linq.Table<ScreenRoom> ScreenRoom
+        {
+            get
+            {
+                return this.GetTable<ScreenRoom>();
+            }
+        }
+		
 	}
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.[User]")]
