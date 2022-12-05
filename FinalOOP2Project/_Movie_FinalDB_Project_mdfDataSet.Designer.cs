@@ -20,9 +20,9 @@ namespace FinalOOP2Project {
     [global::System.ComponentModel.DesignerCategoryAttribute("code")]
     [global::System.ComponentModel.ToolboxItem(true)]
     [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedDataSetSchema")]
-    [global::System.Xml.Serialization.XmlRootAttribute("Movie_FinalDB_ProjectDataSet")]
+    [global::System.Xml.Serialization.XmlRootAttribute("_Movie_FinalDB_Project_mdfDataSet")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.DataSet")]
-    public partial class Movie_FinalDB_ProjectDataSet : global::System.Data.DataSet {
+    public partial class _Movie_FinalDB_Project_mdfDataSet : global::System.Data.DataSet {
         
         private ManagerDataTable tableManager;
         
@@ -52,7 +52,7 @@ namespace FinalOOP2Project {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        public Movie_FinalDB_ProjectDataSet() {
+        public _Movie_FinalDB_Project_mdfDataSet() {
             this.BeginInit();
             this.InitClass();
             global::System.ComponentModel.CollectionChangeEventHandler schemaChangedHandler = new global::System.ComponentModel.CollectionChangeEventHandler(this.SchemaChanged);
@@ -63,7 +63,7 @@ namespace FinalOOP2Project {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        protected Movie_FinalDB_ProjectDataSet(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+        protected _Movie_FinalDB_Project_mdfDataSet(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                 base(info, context, false) {
             if ((this.IsBinarySerialized(info, context) == true)) {
                 this.InitVars(false);
@@ -227,7 +227,7 @@ namespace FinalOOP2Project {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         public override global::System.Data.DataSet Clone() {
-            Movie_FinalDB_ProjectDataSet cln = ((Movie_FinalDB_ProjectDataSet)(base.Clone()));
+            _Movie_FinalDB_Project_mdfDataSet cln = ((_Movie_FinalDB_Project_mdfDataSet)(base.Clone()));
             cln.InitVars();
             cln.SchemaSerializationMode = this.SchemaSerializationMode;
             return cln;
@@ -358,9 +358,9 @@ namespace FinalOOP2Project {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitClass() {
-            this.DataSetName = "Movie_FinalDB_ProjectDataSet";
+            this.DataSetName = "_Movie_FinalDB_Project_mdfDataSet";
             this.Prefix = "";
-            this.Namespace = "http://tempuri.org/Movie_FinalDB_ProjectDataSet1.xsd";
+            this.Namespace = "http://tempuri.org/_Movie_FinalDB_Project_mdfDataSet.xsd";
             this.EnforceConstraints = true;
             this.SchemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
             this.tableManager = new ManagerDataTable();
@@ -452,7 +452,7 @@ namespace FinalOOP2Project {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedDataSetSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
-            Movie_FinalDB_ProjectDataSet ds = new Movie_FinalDB_ProjectDataSet();
+            _Movie_FinalDB_Project_mdfDataSet ds = new _Movie_FinalDB_Project_mdfDataSet();
             global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
             global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
             global::System.Xml.Schema.XmlSchemaAny any = new global::System.Xml.Schema.XmlSchemaAny();
@@ -746,7 +746,7 @@ namespace FinalOOP2Project {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                Movie_FinalDB_ProjectDataSet ds = new Movie_FinalDB_ProjectDataSet();
+                _Movie_FinalDB_Project_mdfDataSet ds = new _Movie_FinalDB_Project_mdfDataSet();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -1067,7 +1067,7 @@ namespace FinalOOP2Project {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                Movie_FinalDB_ProjectDataSet ds = new Movie_FinalDB_ProjectDataSet();
+                _Movie_FinalDB_Project_mdfDataSet ds = new _Movie_FinalDB_Project_mdfDataSet();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -1233,10 +1233,9 @@ namespace FinalOOP2Project {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public MovieTicketUserRow AddMovieTicketUserRow(int MovieId, TicketRow parentTicketRowByFK_MovieTicketUser, int UserId) {
+            public MovieTicketUserRow AddMovieTicketUserRow(MoviesRow parentMoviesRowByMovies_MovieTicketUser, TicketRow parentTicketRowByFK_MovieTicketUser, UserRow parentUserRowByUser_MovieTicketUser) {
                 MovieTicketUserRow rowMovieTicketUserRow = ((MovieTicketUserRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        MovieId,
                         null,
                         null,
                         null};
@@ -1368,7 +1367,7 @@ namespace FinalOOP2Project {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                Movie_FinalDB_ProjectDataSet ds = new Movie_FinalDB_ProjectDataSet();
+                _Movie_FinalDB_Project_mdfDataSet ds = new _Movie_FinalDB_Project_mdfDataSet();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -1678,7 +1677,7 @@ namespace FinalOOP2Project {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                Movie_FinalDB_ProjectDataSet ds = new Movie_FinalDB_ProjectDataSet();
+                _Movie_FinalDB_Project_mdfDataSet ds = new _Movie_FinalDB_Project_mdfDataSet();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -1987,7 +1986,7 @@ namespace FinalOOP2Project {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                Movie_FinalDB_ProjectDataSet ds = new Movie_FinalDB_ProjectDataSet();
+                _Movie_FinalDB_Project_mdfDataSet ds = new _Movie_FinalDB_Project_mdfDataSet();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -2280,7 +2279,7 @@ namespace FinalOOP2Project {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                Movie_FinalDB_ProjectDataSet ds = new Movie_FinalDB_ProjectDataSet();
+                _Movie_FinalDB_Project_mdfDataSet ds = new _Movie_FinalDB_Project_mdfDataSet();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -2568,7 +2567,7 @@ namespace FinalOOP2Project {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                Movie_FinalDB_ProjectDataSet ds = new Movie_FinalDB_ProjectDataSet();
+                _Movie_FinalDB_Project_mdfDataSet ds = new _Movie_FinalDB_Project_mdfDataSet();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -3441,7 +3440,7 @@ namespace FinalOOP2Project {
         }
     }
 }
-namespace FinalOOP2Project.Movie_FinalDB_ProjectDataSetTableAdapters {
+namespace FinalOOP2Project._Movie_FinalDB_Project_mdfDataSetTableAdapters {
     
     
     /// <summary>
@@ -3606,7 +3605,7 @@ SELECT ManagerID, ManagerUsername, ManagerPassword FROM Manager WHERE (ManagerID
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::FinalOOP2Project.Properties.Settings.Default.Movie_FinalDB_ProjectConnectionString;
+            this._connection.ConnectionString = global::FinalOOP2Project.Properties.Settings.Default.Movie_FinalDB_Project_mdfConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3623,7 +3622,7 @@ SELECT ManagerID, ManagerUsername, ManagerPassword FROM Manager WHERE (ManagerID
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(Movie_FinalDB_ProjectDataSet.ManagerDataTable dataTable) {
+        public virtual int Fill(_Movie_FinalDB_Project_mdfDataSet.ManagerDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -3636,9 +3635,9 @@ SELECT ManagerID, ManagerUsername, ManagerPassword FROM Manager WHERE (ManagerID
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual Movie_FinalDB_ProjectDataSet.ManagerDataTable GetData() {
+        public virtual _Movie_FinalDB_Project_mdfDataSet.ManagerDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            Movie_FinalDB_ProjectDataSet.ManagerDataTable dataTable = new Movie_FinalDB_ProjectDataSet.ManagerDataTable();
+            _Movie_FinalDB_Project_mdfDataSet.ManagerDataTable dataTable = new _Movie_FinalDB_Project_mdfDataSet.ManagerDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -3646,14 +3645,14 @@ SELECT ManagerID, ManagerUsername, ManagerPassword FROM Manager WHERE (ManagerID
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(Movie_FinalDB_ProjectDataSet.ManagerDataTable dataTable) {
+        public virtual int Update(_Movie_FinalDB_Project_mdfDataSet.ManagerDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(Movie_FinalDB_ProjectDataSet dataSet) {
+        public virtual int Update(_Movie_FinalDB_Project_mdfDataSet dataSet) {
             return this.Adapter.Update(dataSet, "Manager");
         }
         
@@ -3975,7 +3974,7 @@ SELECT MovieId, MovieName, Genre, DateOfRelease, Actors FROM Movies WHERE (Movie
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::FinalOOP2Project.Properties.Settings.Default.Movie_FinalDB_ProjectConnectionString;
+            this._connection.ConnectionString = global::FinalOOP2Project.Properties.Settings.Default.Movie_FinalDB_Project_mdfConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3992,7 +3991,7 @@ SELECT MovieId, MovieName, Genre, DateOfRelease, Actors FROM Movies WHERE (Movie
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(Movie_FinalDB_ProjectDataSet.MoviesDataTable dataTable) {
+        public virtual int Fill(_Movie_FinalDB_Project_mdfDataSet.MoviesDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -4005,9 +4004,9 @@ SELECT MovieId, MovieName, Genre, DateOfRelease, Actors FROM Movies WHERE (Movie
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual Movie_FinalDB_ProjectDataSet.MoviesDataTable GetData() {
+        public virtual _Movie_FinalDB_Project_mdfDataSet.MoviesDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            Movie_FinalDB_ProjectDataSet.MoviesDataTable dataTable = new Movie_FinalDB_ProjectDataSet.MoviesDataTable();
+            _Movie_FinalDB_Project_mdfDataSet.MoviesDataTable dataTable = new _Movie_FinalDB_Project_mdfDataSet.MoviesDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -4015,14 +4014,14 @@ SELECT MovieId, MovieName, Genre, DateOfRelease, Actors FROM Movies WHERE (Movie
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(Movie_FinalDB_ProjectDataSet.MoviesDataTable dataTable) {
+        public virtual int Update(_Movie_FinalDB_Project_mdfDataSet.MoviesDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(Movie_FinalDB_ProjectDataSet dataSet) {
+        public virtual int Update(_Movie_FinalDB_Project_mdfDataSet dataSet) {
             return this.Adapter.Update(dataSet, "Movies");
         }
         
@@ -4352,7 +4351,7 @@ SELECT MovieId, TicketId, UserId FROM MovieTicketUser WHERE (MovieId = @MovieId)
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::FinalOOP2Project.Properties.Settings.Default.Movie_FinalDB_ProjectConnectionString;
+            this._connection.ConnectionString = global::FinalOOP2Project.Properties.Settings.Default.Movie_FinalDB_Project_mdfConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -4369,7 +4368,7 @@ SELECT MovieId, TicketId, UserId FROM MovieTicketUser WHERE (MovieId = @MovieId)
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(Movie_FinalDB_ProjectDataSet.MovieTicketUserDataTable dataTable) {
+        public virtual int Fill(_Movie_FinalDB_Project_mdfDataSet.MovieTicketUserDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -4382,9 +4381,9 @@ SELECT MovieId, TicketId, UserId FROM MovieTicketUser WHERE (MovieId = @MovieId)
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual Movie_FinalDB_ProjectDataSet.MovieTicketUserDataTable GetData() {
+        public virtual _Movie_FinalDB_Project_mdfDataSet.MovieTicketUserDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            Movie_FinalDB_ProjectDataSet.MovieTicketUserDataTable dataTable = new Movie_FinalDB_ProjectDataSet.MovieTicketUserDataTable();
+            _Movie_FinalDB_Project_mdfDataSet.MovieTicketUserDataTable dataTable = new _Movie_FinalDB_Project_mdfDataSet.MovieTicketUserDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -4392,14 +4391,14 @@ SELECT MovieId, TicketId, UserId FROM MovieTicketUser WHERE (MovieId = @MovieId)
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(Movie_FinalDB_ProjectDataSet.MovieTicketUserDataTable dataTable) {
+        public virtual int Update(_Movie_FinalDB_Project_mdfDataSet.MovieTicketUserDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(Movie_FinalDB_ProjectDataSet dataSet) {
+        public virtual int Update(_Movie_FinalDB_Project_mdfDataSet dataSet) {
             return this.Adapter.Update(dataSet, "MovieTicketUser");
         }
         
@@ -4666,7 +4665,7 @@ SELECT ScreenRoomId, MovieId, RoomNo, TotalSeatNo FROM ScreenRoom WHERE (ScreenR
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::FinalOOP2Project.Properties.Settings.Default.Movie_FinalDB_ProjectConnectionString;
+            this._connection.ConnectionString = global::FinalOOP2Project.Properties.Settings.Default.Movie_FinalDB_Project_mdfConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -4683,7 +4682,7 @@ SELECT ScreenRoomId, MovieId, RoomNo, TotalSeatNo FROM ScreenRoom WHERE (ScreenR
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(Movie_FinalDB_ProjectDataSet.ScreenRoomDataTable dataTable) {
+        public virtual int Fill(_Movie_FinalDB_Project_mdfDataSet.ScreenRoomDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -4696,9 +4695,9 @@ SELECT ScreenRoomId, MovieId, RoomNo, TotalSeatNo FROM ScreenRoom WHERE (ScreenR
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual Movie_FinalDB_ProjectDataSet.ScreenRoomDataTable GetData() {
+        public virtual _Movie_FinalDB_Project_mdfDataSet.ScreenRoomDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            Movie_FinalDB_ProjectDataSet.ScreenRoomDataTable dataTable = new Movie_FinalDB_ProjectDataSet.ScreenRoomDataTable();
+            _Movie_FinalDB_Project_mdfDataSet.ScreenRoomDataTable dataTable = new _Movie_FinalDB_Project_mdfDataSet.ScreenRoomDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -4706,14 +4705,14 @@ SELECT ScreenRoomId, MovieId, RoomNo, TotalSeatNo FROM ScreenRoom WHERE (ScreenR
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(Movie_FinalDB_ProjectDataSet.ScreenRoomDataTable dataTable) {
+        public virtual int Update(_Movie_FinalDB_Project_mdfDataSet.ScreenRoomDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(Movie_FinalDB_ProjectDataSet dataSet) {
+        public virtual int Update(_Movie_FinalDB_Project_mdfDataSet dataSet) {
             return this.Adapter.Update(dataSet, "ScreenRoom");
         }
         
@@ -4985,7 +4984,7 @@ SELECT ShowTimeId, MovieId, ScreenRoomId, Time FROM ShowTime WHERE (ShowTimeId =
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::FinalOOP2Project.Properties.Settings.Default.Movie_FinalDB_ProjectConnectionString;
+            this._connection.ConnectionString = global::FinalOOP2Project.Properties.Settings.Default.Movie_FinalDB_Project_mdfConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -5002,7 +5001,7 @@ SELECT ShowTimeId, MovieId, ScreenRoomId, Time FROM ShowTime WHERE (ShowTimeId =
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(Movie_FinalDB_ProjectDataSet.ShowTimeDataTable dataTable) {
+        public virtual int Fill(_Movie_FinalDB_Project_mdfDataSet.ShowTimeDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -5015,9 +5014,9 @@ SELECT ShowTimeId, MovieId, ScreenRoomId, Time FROM ShowTime WHERE (ShowTimeId =
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual Movie_FinalDB_ProjectDataSet.ShowTimeDataTable GetData() {
+        public virtual _Movie_FinalDB_Project_mdfDataSet.ShowTimeDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            Movie_FinalDB_ProjectDataSet.ShowTimeDataTable dataTable = new Movie_FinalDB_ProjectDataSet.ShowTimeDataTable();
+            _Movie_FinalDB_Project_mdfDataSet.ShowTimeDataTable dataTable = new _Movie_FinalDB_Project_mdfDataSet.ShowTimeDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -5025,14 +5024,14 @@ SELECT ShowTimeId, MovieId, ScreenRoomId, Time FROM ShowTime WHERE (ShowTimeId =
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(Movie_FinalDB_ProjectDataSet.ShowTimeDataTable dataTable) {
+        public virtual int Update(_Movie_FinalDB_Project_mdfDataSet.ShowTimeDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(Movie_FinalDB_ProjectDataSet dataSet) {
+        public virtual int Update(_Movie_FinalDB_Project_mdfDataSet dataSet) {
             return this.Adapter.Update(dataSet, "ShowTime");
         }
         
@@ -5320,7 +5319,7 @@ SELECT ticketId, E_ticket, availability FROM Ticket WHERE (ticketId = @ticketId)
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::FinalOOP2Project.Properties.Settings.Default.Movie_FinalDB_ProjectConnectionString;
+            this._connection.ConnectionString = global::FinalOOP2Project.Properties.Settings.Default.Movie_FinalDB_Project_mdfConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -5337,7 +5336,7 @@ SELECT ticketId, E_ticket, availability FROM Ticket WHERE (ticketId = @ticketId)
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(Movie_FinalDB_ProjectDataSet.TicketDataTable dataTable) {
+        public virtual int Fill(_Movie_FinalDB_Project_mdfDataSet.TicketDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -5350,9 +5349,9 @@ SELECT ticketId, E_ticket, availability FROM Ticket WHERE (ticketId = @ticketId)
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual Movie_FinalDB_ProjectDataSet.TicketDataTable GetData() {
+        public virtual _Movie_FinalDB_Project_mdfDataSet.TicketDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            Movie_FinalDB_ProjectDataSet.TicketDataTable dataTable = new Movie_FinalDB_ProjectDataSet.TicketDataTable();
+            _Movie_FinalDB_Project_mdfDataSet.TicketDataTable dataTable = new _Movie_FinalDB_Project_mdfDataSet.TicketDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -5360,14 +5359,14 @@ SELECT ticketId, E_ticket, availability FROM Ticket WHERE (ticketId = @ticketId)
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(Movie_FinalDB_ProjectDataSet.TicketDataTable dataTable) {
+        public virtual int Update(_Movie_FinalDB_Project_mdfDataSet.TicketDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(Movie_FinalDB_ProjectDataSet dataSet) {
+        public virtual int Update(_Movie_FinalDB_Project_mdfDataSet dataSet) {
             return this.Adapter.Update(dataSet, "Ticket");
         }
         
@@ -5653,7 +5652,7 @@ SELECT UserId, Username, Password FROM [User] WHERE (UserId = @UserId)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::FinalOOP2Project.Properties.Settings.Default.Movie_FinalDB_ProjectConnectionString;
+            this._connection.ConnectionString = global::FinalOOP2Project.Properties.Settings.Default.Movie_FinalDB_Project_mdfConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -5670,7 +5669,7 @@ SELECT UserId, Username, Password FROM [User] WHERE (UserId = @UserId)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(Movie_FinalDB_ProjectDataSet.UserDataTable dataTable) {
+        public virtual int Fill(_Movie_FinalDB_Project_mdfDataSet.UserDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -5683,9 +5682,9 @@ SELECT UserId, Username, Password FROM [User] WHERE (UserId = @UserId)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual Movie_FinalDB_ProjectDataSet.UserDataTable GetData() {
+        public virtual _Movie_FinalDB_Project_mdfDataSet.UserDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            Movie_FinalDB_ProjectDataSet.UserDataTable dataTable = new Movie_FinalDB_ProjectDataSet.UserDataTable();
+            _Movie_FinalDB_Project_mdfDataSet.UserDataTable dataTable = new _Movie_FinalDB_Project_mdfDataSet.UserDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -5693,14 +5692,14 @@ SELECT UserId, Username, Password FROM [User] WHERE (UserId = @UserId)";
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(Movie_FinalDB_ProjectDataSet.UserDataTable dataTable) {
+        public virtual int Update(_Movie_FinalDB_Project_mdfDataSet.UserDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(Movie_FinalDB_ProjectDataSet dataSet) {
+        public virtual int Update(_Movie_FinalDB_Project_mdfDataSet dataSet) {
             return this.Adapter.Update(dataSet, "User");
         }
         
@@ -6080,7 +6079,7 @@ SELECT UserId, Username, Password FROM [User] WHERE (UserId = @UserId)";
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        private int UpdateUpdatedRows(Movie_FinalDB_ProjectDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateUpdatedRows(_Movie_FinalDB_Project_mdfDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
             if ((this._moviesTableAdapter != null)) {
                 global::System.Data.DataRow[] updatedRows = dataSet.Movies.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
@@ -6145,15 +6144,6 @@ SELECT UserId, Username, Password FROM [User] WHERE (UserId = @UserId)";
                     allChangedRows.AddRange(updatedRows);
                 }
             }
-            if ((this._userTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.User.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
-                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
-                if (((updatedRows != null) 
-                            && (0 < updatedRows.Length))) {
-                    result = (result + this._userTableAdapter.Update(updatedRows));
-                    allChangedRows.AddRange(updatedRows);
-                }
-            }
             return result;
         }
         
@@ -6162,7 +6152,7 @@ SELECT UserId, Username, Password FROM [User] WHERE (UserId = @UserId)";
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        private int UpdateInsertedRows(Movie_FinalDB_ProjectDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateInsertedRows(_Movie_FinalDB_Project_mdfDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
             if ((this._moviesTableAdapter != null)) {
                 global::System.Data.DataRow[] addedRows = dataSet.Movies.Select(null, null, global::System.Data.DataViewRowState.Added);
@@ -6220,14 +6210,6 @@ SELECT UserId, Username, Password FROM [User] WHERE (UserId = @UserId)";
                     allAddedRows.AddRange(addedRows);
                 }
             }
-            if ((this._userTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.User.Select(null, null, global::System.Data.DataViewRowState.Added);
-                if (((addedRows != null) 
-                            && (0 < addedRows.Length))) {
-                    result = (result + this._userTableAdapter.Update(addedRows));
-                    allAddedRows.AddRange(addedRows);
-                }
-            }
             return result;
         }
         
@@ -6236,16 +6218,8 @@ SELECT UserId, Username, Password FROM [User] WHERE (UserId = @UserId)";
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        private int UpdateDeletedRows(Movie_FinalDB_ProjectDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
+        private int UpdateDeletedRows(_Movie_FinalDB_Project_mdfDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
             int result = 0;
-            if ((this._userTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.User.Select(null, null, global::System.Data.DataViewRowState.Deleted);
-                if (((deletedRows != null) 
-                            && (0 < deletedRows.Length))) {
-                    result = (result + this._userTableAdapter.Update(deletedRows));
-                    allChangedRows.AddRange(deletedRows);
-                }
-            }
             if ((this._showTimeTableAdapter != null)) {
                 global::System.Data.DataRow[] deletedRows = dataSet.ShowTime.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
@@ -6334,7 +6308,7 @@ SELECT UserId, Username, Password FROM [User] WHERE (UserId = @UserId)";
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        public virtual int UpdateAll(Movie_FinalDB_ProjectDataSet dataSet) {
+        public virtual int UpdateAll(_Movie_FinalDB_Project_mdfDataSet dataSet) {
             if ((dataSet == null)) {
                 throw new global::System.ArgumentNullException("dataSet");
             }

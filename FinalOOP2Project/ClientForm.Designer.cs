@@ -1,6 +1,6 @@
 ﻿namespace FinalOOP2Project
 {
-    partial class ClientFormcs
+    partial class ClientForm
     {
         /// <summary>
         /// Required designer variable.
@@ -29,23 +29,21 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ClientFormcs));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ClientForm));
             this.listView = new System.Windows.Forms.ListView();
             this.movieNameColumnHeader = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.GenreColumnHeader = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.actorColumnHeader = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.yearColumnHeader = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.moviesBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.screenRoomBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.moviesBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.screenRoomColumnHeader = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.showTimeColumnHeader = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.moviesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.screenRoomBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.buyButton = new System.Windows.Forms.Button();
             this.logoutButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.moviesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.screenRoomBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.moviesBindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // listView
@@ -69,6 +67,7 @@
             this.listView.TabIndex = 1;
             this.listView.UseCompatibleStateImageBehavior = false;
             this.listView.View = System.Windows.Forms.View.Details;
+            this.listView.SelectedIndexChanged += new System.EventHandler(this.listView_SelectedIndexChanged_1);
             // 
             // movieNameColumnHeader
             // 
@@ -90,19 +89,6 @@
             this.yearColumnHeader.Text = "Year";
             this.yearColumnHeader.Width = 113;
             // 
-            // moviesBindingSource
-            // 
-            this.moviesBindingSource.DataMember = "Movies";
-            // 
-            // screenRoomBindingSource
-            // 
-            this.screenRoomBindingSource.DataMember = "FK__ScreenRoo__Movie__04E4BC85";
-            this.screenRoomBindingSource.DataSource = this.moviesBindingSource;
-            // 
-            // moviesBindingSource1
-            // 
-            this.moviesBindingSource1.DataMember = "Movies";
-            // 
             // screenRoomColumnHeader
             // 
             this.screenRoomColumnHeader.Text = "Screen Room";
@@ -111,7 +97,15 @@
             // showTimeColumnHeader
             // 
             this.showTimeColumnHeader.Text = "Show Time";
-            this.showTimeColumnHeader.Width = 102;
+            this.showTimeColumnHeader.Width = 159;
+            // 
+            // moviesBindingSource
+            // 
+            this.moviesBindingSource.DataMember = "Movies";
+            // 
+            // screenRoomBindingSource
+            // 
+            this.screenRoomBindingSource.DataSource = this.moviesBindingSource;
             // 
             // buyButton
             // 
@@ -124,6 +118,7 @@
             this.buyButton.TabIndex = 6;
             this.buyButton.Text = "Buy a ticket";
             this.buyButton.UseVisualStyleBackColor = true;
+            this.buyButton.Click += new System.EventHandler(this.buyButton_Click);
             // 
             // logoutButton
             // 
@@ -136,8 +131,9 @@
             this.logoutButton.TabIndex = 7;
             this.logoutButton.Text = "Logout";
             this.logoutButton.UseVisualStyleBackColor = true;
+            this.logoutButton.Click += new System.EventHandler(this.logoutButton_Click);
             // 
-            // ClientFormcs
+            // ClientForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -146,29 +142,28 @@
             this.Controls.Add(this.logoutButton);
             this.Controls.Add(this.buyButton);
             this.Controls.Add(this.listView);
-            this.Name = "ClientFormcs";
+            this.Name = "ClientForm";
             this.Text = "ClientFormcs";
+            this.Load += new System.EventHandler(this.ClientFormcs_Load);
             ((System.ComponentModel.ISupportInitialize)(this.moviesBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.screenRoomBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.moviesBindingSource1)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private System.Windows.Forms.ListView listView;
         private System.Windows.Forms.ColumnHeader movieNameColumnHeader;
         private System.Windows.Forms.ColumnHeader GenreColumnHeader;
         private System.Windows.Forms.ColumnHeader actorColumnHeader;
         private System.Windows.Forms.ColumnHeader yearColumnHeader;
         private System.Windows.Forms.BindingSource moviesBindingSource;
         private System.Windows.Forms.BindingSource screenRoomBindingSource;
-        private System.Windows.Forms.BindingSource moviesBindingSource1;
+       // private System.Windows.Forms.BindingSource moviesBindingSource1;
         private System.Windows.Forms.ColumnHeader screenRoomColumnHeader;
         private System.Windows.Forms.ColumnHeader showTimeColumnHeader;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private System.Windows.Forms.Button buyButton;
         private System.Windows.Forms.Button logoutButton;
+        public System.Windows.Forms.ListView listView;
     }
 }
