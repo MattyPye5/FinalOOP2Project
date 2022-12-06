@@ -48,6 +48,9 @@ namespace FinalOOP2Project
     partial void InsertMovieTicketUser(MovieTicketUser instance);
     partial void UpdateMovieTicketUser(MovieTicketUser instance);
     partial void DeleteMovieTicketUser(MovieTicketUser instance);
+    partial void InsertShowTime(ShowTime instance);
+    partial void UpdateShowTime(ShowTime instance);
+    partial void DeleteShowTime(ShowTime instance);
     #endregion
 		
 		public MovieTheatreDataClassDataContext() : 
@@ -125,6 +128,14 @@ namespace FinalOOP2Project
 			get
 			{
 				return this.GetTable<MovieTicketUser>();
+			}
+		}
+		
+		public System.Data.Linq.Table<ShowTime> ShowTimes
+		{
+			get
+			{
+				return this.GetTable<ShowTime>();
 			}
 		}
 	}
@@ -549,6 +560,8 @@ namespace FinalOOP2Project
 		
 		private int _TotalSeatNo;
 		
+		private EntitySet<ShowTime> _ShowTimes;
+		
 		private EntityRef<Movies> _Movie;
 		
     #region Extensibility Method Definitions
@@ -567,6 +580,7 @@ namespace FinalOOP2Project
 		
 		public ScreenRoom()
 		{
+			this._ShowTimes = new EntitySet<ShowTime>(new Action<ShowTime>(this.attach_ShowTimes), new Action<ShowTime>(this.detach_ShowTimes));
 			this._Movie = default(EntityRef<Movies>);
 			OnCreated();
 		}
@@ -655,6 +669,19 @@ namespace FinalOOP2Project
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="ScreenRoom_ShowTime", Storage="_ShowTimes", ThisKey="ScreenRoomId", OtherKey="ScreenRoomId")]
+		public EntitySet<ShowTime> ShowTimes
+		{
+			get
+			{
+				return this._ShowTimes;
+			}
+			set
+			{
+				this._ShowTimes.Assign(value);
+			}
+		}
+		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Movies_ScreenRoom", Storage="_Movie", ThisKey="MovieId", OtherKey="MovieId", IsForeignKey=true)]
 		public Movies Movies
 		{
@@ -707,6 +734,18 @@ namespace FinalOOP2Project
 			{
 				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
+		}
+		
+		private void attach_ShowTimes(ShowTime entity)
+		{
+			this.SendPropertyChanging();
+			entity.ScreenRoom = this;
+		}
+		
+		private void detach_ShowTimes(ShowTime entity)
+		{
+			this.SendPropertyChanging();
+			entity.ScreenRoom = null;
 		}
 	}
 	
@@ -974,6 +1013,181 @@ namespace FinalOOP2Project
 						this._TicketId = default(int);
 					}
 					this.SendPropertyChanged("Ticket");
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.ShowTime")]
+	public partial class ShowTime : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _ShowTimeId;
+		
+		private int _MovieId;
+		
+		private int _ScreenRoomId;
+		
+		private System.Nullable<System.DateTime> _Time;
+		
+		private EntityRef<ScreenRoom> _ScreenRoom;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnShowTimeIdChanging(int value);
+    partial void OnShowTimeIdChanged();
+    partial void OnMovieIdChanging(int value);
+    partial void OnMovieIdChanged();
+    partial void OnScreenRoomIdChanging(int value);
+    partial void OnScreenRoomIdChanged();
+    partial void OnTimeChanging(System.Nullable<System.DateTime> value);
+    partial void OnTimeChanged();
+    #endregion
+		
+		public ShowTime()
+		{
+			this._ScreenRoom = default(EntityRef<ScreenRoom>);
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ShowTimeId", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int ShowTimeId
+		{
+			get
+			{
+				return this._ShowTimeId;
+			}
+			set
+			{
+				if ((this._ShowTimeId != value))
+				{
+					this.OnShowTimeIdChanging(value);
+					this.SendPropertyChanging();
+					this._ShowTimeId = value;
+					this.SendPropertyChanged("ShowTimeId");
+					this.OnShowTimeIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MovieId", DbType="Int NOT NULL")]
+		public int MovieId
+		{
+			get
+			{
+				return this._MovieId;
+			}
+			set
+			{
+				if ((this._MovieId != value))
+				{
+					this.OnMovieIdChanging(value);
+					this.SendPropertyChanging();
+					this._MovieId = value;
+					this.SendPropertyChanged("MovieId");
+					this.OnMovieIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ScreenRoomId", DbType="Int NOT NULL")]
+		public int ScreenRoomId
+		{
+			get
+			{
+				return this._ScreenRoomId;
+			}
+			set
+			{
+				if ((this._ScreenRoomId != value))
+				{
+					if (this._ScreenRoom.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnScreenRoomIdChanging(value);
+					this.SendPropertyChanging();
+					this._ScreenRoomId = value;
+					this.SendPropertyChanged("ScreenRoomId");
+					this.OnScreenRoomIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Time", DbType="DateTime")]
+		public System.Nullable<System.DateTime> Time
+		{
+			get
+			{
+				return this._Time;
+			}
+			set
+			{
+				if ((this._Time != value))
+				{
+					this.OnTimeChanging(value);
+					this.SendPropertyChanging();
+					this._Time = value;
+					this.SendPropertyChanged("Time");
+					this.OnTimeChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="ScreenRoom_ShowTime", Storage="_ScreenRoom", ThisKey="ScreenRoomId", OtherKey="ScreenRoomId", IsForeignKey=true)]
+		public ScreenRoom ScreenRoom
+		{
+			get
+			{
+				return this._ScreenRoom.Entity;
+			}
+			set
+			{
+				ScreenRoom previousValue = this._ScreenRoom.Entity;
+				if (((previousValue != value) 
+							|| (this._ScreenRoom.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._ScreenRoom.Entity = null;
+						previousValue.ShowTimes.Remove(this);
+					}
+					this._ScreenRoom.Entity = value;
+					if ((value != null))
+					{
+						value.ShowTimes.Add(this);
+						this._ScreenRoomId = value.ScreenRoomId;
+					}
+					else
+					{
+						this._ScreenRoomId = default(int);
+					}
+					this.SendPropertyChanged("ScreenRoom");
 				}
 			}
 		}
