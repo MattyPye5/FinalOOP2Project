@@ -413,47 +413,18 @@ SELECT UserId, Username, Password FROM [User] WHERE (UserId = @UserId)</CommandT
   <xs:element name="Movie_FinalDB_ProjectDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_UserDSName="Movie_FinalDB_ProjectDataSet" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="Movie_FinalDB_ProjectDataSet">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="Manager" msprop:Generator_RowClassName="ManagerRow" msprop:Generator_RowEvHandlerName="ManagerRowChangeEventHandler" msprop:Generator_RowDeletedName="ManagerRowDeleted" msprop:Generator_RowDeletingName="ManagerRowDeleting" msprop:Generator_RowEvArgName="ManagerRowChangeEvent" msprop:Generator_TablePropName="Manager" msprop:Generator_RowChangedName="ManagerRowChanged" msprop:Generator_UserTableName="Manager" msprop:Generator_RowChangingName="ManagerRowChanging" msprop:Generator_TableClassName="ManagerDataTable" msprop:Generator_TableVarName="tableManager">
+        <xs:element name="Manager" msprop:Generator_RowEvHandlerName="ManagerRowChangeEventHandler" msprop:Generator_RowDeletedName="ManagerRowDeleted" msprop:Generator_RowDeletingName="ManagerRowDeleting" msprop:Generator_RowEvArgName="ManagerRowChangeEvent" msprop:Generator_TablePropName="Manager" msprop:Generator_RowChangedName="ManagerRowChanged" msprop:Generator_UserTableName="Manager" msprop:Generator_RowChangingName="ManagerRowChanging" msprop:Generator_RowClassName="ManagerRow" msprop:Generator_TableClassName="ManagerDataTable" msprop:Generator_TableVarName="tableManager">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="ManagerID" msprop:Generator_UserColumnName="ManagerID" msprop:Generator_ColumnPropNameInTable="ManagerIDColumn" msprop:Generator_ColumnPropNameInRow="ManagerID" msprop:Generator_ColumnVarNameInTable="columnManagerID" type="xs:int" />
-              <xs:element name="ManagerUsername" msprop:Generator_UserColumnName="ManagerUsername" msprop:Generator_ColumnPropNameInTable="ManagerUsernameColumn" msprop:Generator_ColumnPropNameInRow="ManagerUsername" msprop:Generator_ColumnVarNameInTable="columnManagerUsername" minOccurs="0">
+              <xs:element name="ManagerID" msprop:Generator_ColumnPropNameInTable="ManagerIDColumn" msprop:Generator_ColumnPropNameInRow="ManagerID" msprop:Generator_UserColumnName="ManagerID" msprop:Generator_ColumnVarNameInTable="columnManagerID" type="xs:int" />
+              <xs:element name="ManagerUsername" msprop:Generator_ColumnPropNameInTable="ManagerUsernameColumn" msprop:Generator_ColumnPropNameInRow="ManagerUsername" msprop:Generator_UserColumnName="ManagerUsername" msprop:Generator_ColumnVarNameInTable="columnManagerUsername" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="50" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="ManagerPassword" msprop:Generator_UserColumnName="ManagerPassword" msprop:Generator_ColumnPropNameInTable="ManagerPasswordColumn" msprop:Generator_ColumnPropNameInRow="ManagerPassword" msprop:Generator_ColumnVarNameInTable="columnManagerPassword" minOccurs="0">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="50" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-            </xs:sequence>
-          </xs:complexType>
-        </xs:element>
-        <xs:element name="Movies" msprop:Generator_RowClassName="MoviesRow" msprop:Generator_RowEvHandlerName="MoviesRowChangeEventHandler" msprop:Generator_RowDeletedName="MoviesRowDeleted" msprop:Generator_RowDeletingName="MoviesRowDeleting" msprop:Generator_RowEvArgName="MoviesRowChangeEvent" msprop:Generator_TablePropName="Movies" msprop:Generator_RowChangedName="MoviesRowChanged" msprop:Generator_UserTableName="Movies" msprop:Generator_RowChangingName="MoviesRowChanging" msprop:Generator_TableClassName="MoviesDataTable" msprop:Generator_TableVarName="tableMovies">
-          <xs:complexType>
-            <xs:sequence>
-              <xs:element name="MovieId" msprop:Generator_UserColumnName="MovieId" msprop:Generator_ColumnPropNameInTable="MovieIdColumn" msprop:Generator_ColumnPropNameInRow="MovieId" msprop:Generator_ColumnVarNameInTable="columnMovieId" type="xs:int" />
-              <xs:element name="MovieName" msprop:Generator_UserColumnName="MovieName" msprop:Generator_ColumnPropNameInTable="MovieNameColumn" msprop:Generator_ColumnPropNameInRow="MovieName" msprop:Generator_ColumnVarNameInTable="columnMovieName">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="50" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="Genre" msprop:Generator_UserColumnName="Genre" msprop:Generator_ColumnPropNameInTable="GenreColumn" msprop:Generator_ColumnPropNameInRow="Genre" msprop:Generator_ColumnVarNameInTable="columnGenre">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="50" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="DateOfRelease" msprop:Generator_UserColumnName="DateOfRelease" msprop:Generator_ColumnPropNameInTable="DateOfReleaseColumn" msprop:Generator_ColumnPropNameInRow="DateOfRelease" msprop:Generator_ColumnVarNameInTable="columnDateOfRelease" type="xs:int" />
-              <xs:element name="Actors" msprop:Generator_UserColumnName="Actors" msprop:Generator_ColumnPropNameInTable="ActorsColumn" msprop:Generator_ColumnPropNameInRow="Actors" msprop:Generator_ColumnVarNameInTable="columnActors">
+              <xs:element name="ManagerPassword" msprop:Generator_ColumnPropNameInTable="ManagerPasswordColumn" msprop:Generator_ColumnPropNameInRow="ManagerPassword" msprop:Generator_UserColumnName="ManagerPassword" msprop:Generator_ColumnVarNameInTable="columnManagerPassword" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="50" />
@@ -463,41 +434,26 @@ SELECT UserId, Username, Password FROM [User] WHERE (UserId = @UserId)</CommandT
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="MovieTicketUser" msprop:Generator_RowClassName="MovieTicketUserRow" msprop:Generator_RowEvHandlerName="MovieTicketUserRowChangeEventHandler" msprop:Generator_RowDeletedName="MovieTicketUserRowDeleted" msprop:Generator_RowDeletingName="MovieTicketUserRowDeleting" msprop:Generator_RowEvArgName="MovieTicketUserRowChangeEvent" msprop:Generator_TablePropName="MovieTicketUser" msprop:Generator_RowChangedName="MovieTicketUserRowChanged" msprop:Generator_UserTableName="MovieTicketUser" msprop:Generator_RowChangingName="MovieTicketUserRowChanging" msprop:Generator_TableClassName="MovieTicketUserDataTable" msprop:Generator_TableVarName="tableMovieTicketUser">
+        <xs:element name="Movies" msprop:Generator_RowEvHandlerName="MoviesRowChangeEventHandler" msprop:Generator_RowDeletedName="MoviesRowDeleted" msprop:Generator_RowDeletingName="MoviesRowDeleting" msprop:Generator_RowEvArgName="MoviesRowChangeEvent" msprop:Generator_TablePropName="Movies" msprop:Generator_RowChangedName="MoviesRowChanged" msprop:Generator_UserTableName="Movies" msprop:Generator_RowChangingName="MoviesRowChanging" msprop:Generator_RowClassName="MoviesRow" msprop:Generator_TableClassName="MoviesDataTable" msprop:Generator_TableVarName="tableMovies">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="MovieId" msprop:Generator_UserColumnName="MovieId" msprop:Generator_ColumnPropNameInTable="MovieIdColumn" msprop:Generator_ColumnPropNameInRow="MovieId" msprop:Generator_ColumnVarNameInTable="columnMovieId" type="xs:int" />
-              <xs:element name="TicketId" msprop:Generator_UserColumnName="TicketId" msprop:Generator_ColumnPropNameInTable="TicketIdColumn" msprop:Generator_ColumnPropNameInRow="TicketId" msprop:Generator_ColumnVarNameInTable="columnTicketId" type="xs:int" />
-              <xs:element name="UserId" msprop:Generator_UserColumnName="UserId" msprop:Generator_ColumnPropNameInTable="UserIdColumn" msprop:Generator_ColumnPropNameInRow="UserId" msprop:Generator_ColumnVarNameInTable="columnUserId" type="xs:int" />
-            </xs:sequence>
-          </xs:complexType>
-        </xs:element>
-        <xs:element name="ScreenRoom" msprop:Generator_RowClassName="ScreenRoomRow" msprop:Generator_RowEvHandlerName="ScreenRoomRowChangeEventHandler" msprop:Generator_RowDeletedName="ScreenRoomRowDeleted" msprop:Generator_RowDeletingName="ScreenRoomRowDeleting" msprop:Generator_RowEvArgName="ScreenRoomRowChangeEvent" msprop:Generator_TablePropName="ScreenRoom" msprop:Generator_RowChangedName="ScreenRoomRowChanged" msprop:Generator_UserTableName="ScreenRoom" msprop:Generator_RowChangingName="ScreenRoomRowChanging" msprop:Generator_TableClassName="ScreenRoomDataTable" msprop:Generator_TableVarName="tableScreenRoom">
-          <xs:complexType>
-            <xs:sequence>
-              <xs:element name="ScreenRoomId" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_UserColumnName="ScreenRoomId" msprop:Generator_ColumnPropNameInTable="ScreenRoomIdColumn" msprop:Generator_ColumnPropNameInRow="ScreenRoomId" msprop:Generator_ColumnVarNameInTable="columnScreenRoomId" type="xs:int" />
-              <xs:element name="MovieId" msprop:Generator_UserColumnName="MovieId" msprop:Generator_ColumnPropNameInTable="MovieIdColumn" msprop:Generator_ColumnPropNameInRow="MovieId" msprop:Generator_ColumnVarNameInTable="columnMovieId" type="xs:int" />
-              <xs:element name="RoomNo" msprop:Generator_UserColumnName="RoomNo" msprop:Generator_ColumnPropNameInTable="RoomNoColumn" msprop:Generator_ColumnPropNameInRow="RoomNo" msprop:Generator_ColumnVarNameInTable="columnRoomNo" type="xs:int" />
-              <xs:element name="TotalSeatNo" msprop:Generator_UserColumnName="TotalSeatNo" msprop:Generator_ColumnPropNameInTable="TotalSeatNoColumn" msprop:Generator_ColumnPropNameInRow="TotalSeatNo" msprop:Generator_ColumnVarNameInTable="columnTotalSeatNo" type="xs:int" />
-            </xs:sequence>
-          </xs:complexType>
-        </xs:element>
-        <xs:element name="ShowTime" msprop:Generator_RowClassName="ShowTimeRow" msprop:Generator_RowEvHandlerName="ShowTimeRowChangeEventHandler" msprop:Generator_RowDeletedName="ShowTimeRowDeleted" msprop:Generator_RowDeletingName="ShowTimeRowDeleting" msprop:Generator_RowEvArgName="ShowTimeRowChangeEvent" msprop:Generator_TablePropName="ShowTime" msprop:Generator_RowChangedName="ShowTimeRowChanged" msprop:Generator_UserTableName="ShowTime" msprop:Generator_RowChangingName="ShowTimeRowChanging" msprop:Generator_TableClassName="ShowTimeDataTable" msprop:Generator_TableVarName="tableShowTime">
-          <xs:complexType>
-            <xs:sequence>
-              <xs:element name="ShowTimeId" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_UserColumnName="ShowTimeId" msprop:Generator_ColumnPropNameInTable="ShowTimeIdColumn" msprop:Generator_ColumnPropNameInRow="ShowTimeId" msprop:Generator_ColumnVarNameInTable="columnShowTimeId" type="xs:int" />
-              <xs:element name="MovieId" msprop:Generator_UserColumnName="MovieId" msprop:Generator_ColumnPropNameInTable="MovieIdColumn" msprop:Generator_ColumnPropNameInRow="MovieId" msprop:Generator_ColumnVarNameInTable="columnMovieId" type="xs:int" />
-              <xs:element name="ScreenRoomId" msprop:Generator_UserColumnName="ScreenRoomId" msprop:Generator_ColumnPropNameInTable="ScreenRoomIdColumn" msprop:Generator_ColumnPropNameInRow="ScreenRoomId" msprop:Generator_ColumnVarNameInTable="columnScreenRoomId" type="xs:int" />
-              <xs:element name="Time" msprop:Generator_UserColumnName="Time" msprop:Generator_ColumnPropNameInTable="TimeColumn" msprop:Generator_ColumnPropNameInRow="Time" msprop:Generator_ColumnVarNameInTable="columnTime" type="xs:dateTime" minOccurs="0" />
-            </xs:sequence>
-          </xs:complexType>
-        </xs:element>
-        <xs:element name="Ticket" msprop:Generator_RowClassName="TicketRow" msprop:Generator_RowEvHandlerName="TicketRowChangeEventHandler" msprop:Generator_RowDeletedName="TicketRowDeleted" msprop:Generator_RowDeletingName="TicketRowDeleting" msprop:Generator_RowEvArgName="TicketRowChangeEvent" msprop:Generator_TablePropName="Ticket" msprop:Generator_RowChangedName="TicketRowChanged" msprop:Generator_UserTableName="Ticket" msprop:Generator_RowChangingName="TicketRowChanging" msprop:Generator_TableClassName="TicketDataTable" msprop:Generator_TableVarName="tableTicket">
-          <xs:complexType>
-            <xs:sequence>
-              <xs:element name="ticketId" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_UserColumnName="ticketId" msprop:Generator_ColumnPropNameInTable="ticketIdColumn" msprop:Generator_ColumnPropNameInRow="ticketId" msprop:Generator_ColumnVarNameInTable="columnticketId" type="xs:int" />
-              <xs:element name="E_ticket" msprop:Generator_UserColumnName="E_ticket" msprop:Generator_ColumnPropNameInTable="E_ticketColumn" msprop:Generator_ColumnPropNameInRow="E_ticket" msprop:Generator_ColumnVarNameInTable="columnE_ticket" type="xs:int" />
-              <xs:element name="availability" msprop:Generator_UserColumnName="availability" msprop:Generator_ColumnPropNameInTable="availabilityColumn" msprop:Generator_ColumnPropNameInRow="availability" msprop:Generator_ColumnVarNameInTable="columnavailability">
+              <xs:element name="MovieId" msprop:Generator_ColumnPropNameInTable="MovieIdColumn" msprop:Generator_ColumnPropNameInRow="MovieId" msprop:Generator_UserColumnName="MovieId" msprop:Generator_ColumnVarNameInTable="columnMovieId" type="xs:int" />
+              <xs:element name="MovieName" msprop:Generator_ColumnPropNameInTable="MovieNameColumn" msprop:Generator_ColumnPropNameInRow="MovieName" msprop:Generator_UserColumnName="MovieName" msprop:Generator_ColumnVarNameInTable="columnMovieName">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Genre" msprop:Generator_ColumnPropNameInTable="GenreColumn" msprop:Generator_ColumnPropNameInRow="Genre" msprop:Generator_UserColumnName="Genre" msprop:Generator_ColumnVarNameInTable="columnGenre">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="DateOfRelease" msprop:Generator_ColumnPropNameInTable="DateOfReleaseColumn" msprop:Generator_ColumnPropNameInRow="DateOfRelease" msprop:Generator_UserColumnName="DateOfRelease" msprop:Generator_ColumnVarNameInTable="columnDateOfRelease" type="xs:int" />
+              <xs:element name="Actors" msprop:Generator_ColumnPropNameInTable="ActorsColumn" msprop:Generator_ColumnPropNameInRow="Actors" msprop:Generator_UserColumnName="Actors" msprop:Generator_ColumnVarNameInTable="columnActors">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="50" />
@@ -507,18 +463,62 @@ SELECT UserId, Username, Password FROM [User] WHERE (UserId = @UserId)</CommandT
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="User" msprop:Generator_RowClassName="UserRow" msprop:Generator_RowEvHandlerName="UserRowChangeEventHandler" msprop:Generator_RowDeletedName="UserRowDeleted" msprop:Generator_RowDeletingName="UserRowDeleting" msprop:Generator_RowEvArgName="UserRowChangeEvent" msprop:Generator_TablePropName="User" msprop:Generator_RowChangedName="UserRowChanged" msprop:Generator_UserTableName="User" msprop:Generator_RowChangingName="UserRowChanging" msprop:Generator_TableClassName="UserDataTable" msprop:Generator_TableVarName="tableUser">
+        <xs:element name="MovieTicketUser" msprop:Generator_RowEvHandlerName="MovieTicketUserRowChangeEventHandler" msprop:Generator_RowDeletedName="MovieTicketUserRowDeleted" msprop:Generator_RowDeletingName="MovieTicketUserRowDeleting" msprop:Generator_RowEvArgName="MovieTicketUserRowChangeEvent" msprop:Generator_TablePropName="MovieTicketUser" msprop:Generator_RowChangedName="MovieTicketUserRowChanged" msprop:Generator_UserTableName="MovieTicketUser" msprop:Generator_RowChangingName="MovieTicketUserRowChanging" msprop:Generator_RowClassName="MovieTicketUserRow" msprop:Generator_TableClassName="MovieTicketUserDataTable" msprop:Generator_TableVarName="tableMovieTicketUser">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="UserId" msprop:Generator_UserColumnName="UserId" msprop:Generator_ColumnPropNameInTable="UserIdColumn" msprop:Generator_ColumnPropNameInRow="UserId" msprop:Generator_ColumnVarNameInTable="columnUserId" type="xs:int" />
-              <xs:element name="Username" msprop:Generator_UserColumnName="Username" msprop:Generator_ColumnPropNameInTable="UsernameColumn" msprop:Generator_ColumnPropNameInRow="Username" msprop:Generator_ColumnVarNameInTable="columnUsername" minOccurs="0">
+              <xs:element name="MovieId" msprop:Generator_ColumnPropNameInTable="MovieIdColumn" msprop:Generator_ColumnPropNameInRow="MovieId" msprop:Generator_UserColumnName="MovieId" msprop:Generator_ColumnVarNameInTable="columnMovieId" type="xs:int" />
+              <xs:element name="TicketId" msprop:Generator_ColumnPropNameInTable="TicketIdColumn" msprop:Generator_ColumnPropNameInRow="TicketId" msprop:Generator_UserColumnName="TicketId" msprop:Generator_ColumnVarNameInTable="columnTicketId" type="xs:int" />
+              <xs:element name="UserId" msprop:Generator_ColumnPropNameInTable="UserIdColumn" msprop:Generator_ColumnPropNameInRow="UserId" msprop:Generator_UserColumnName="UserId" msprop:Generator_ColumnVarNameInTable="columnUserId" type="xs:int" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="ScreenRoom" msprop:Generator_RowEvHandlerName="ScreenRoomRowChangeEventHandler" msprop:Generator_RowDeletedName="ScreenRoomRowDeleted" msprop:Generator_RowDeletingName="ScreenRoomRowDeleting" msprop:Generator_RowEvArgName="ScreenRoomRowChangeEvent" msprop:Generator_TablePropName="ScreenRoom" msprop:Generator_RowChangedName="ScreenRoomRowChanged" msprop:Generator_UserTableName="ScreenRoom" msprop:Generator_RowChangingName="ScreenRoomRowChanging" msprop:Generator_RowClassName="ScreenRoomRow" msprop:Generator_TableClassName="ScreenRoomDataTable" msprop:Generator_TableVarName="tableScreenRoom">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ScreenRoomId" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnPropNameInTable="ScreenRoomIdColumn" msprop:Generator_ColumnPropNameInRow="ScreenRoomId" msprop:Generator_UserColumnName="ScreenRoomId" msprop:Generator_ColumnVarNameInTable="columnScreenRoomId" type="xs:int" />
+              <xs:element name="MovieId" msprop:Generator_ColumnPropNameInTable="MovieIdColumn" msprop:Generator_ColumnPropNameInRow="MovieId" msprop:Generator_UserColumnName="MovieId" msprop:Generator_ColumnVarNameInTable="columnMovieId" type="xs:int" />
+              <xs:element name="RoomNo" msprop:Generator_ColumnPropNameInTable="RoomNoColumn" msprop:Generator_ColumnPropNameInRow="RoomNo" msprop:Generator_UserColumnName="RoomNo" msprop:Generator_ColumnVarNameInTable="columnRoomNo" type="xs:int" />
+              <xs:element name="TotalSeatNo" msprop:Generator_ColumnPropNameInTable="TotalSeatNoColumn" msprop:Generator_ColumnPropNameInRow="TotalSeatNo" msprop:Generator_UserColumnName="TotalSeatNo" msprop:Generator_ColumnVarNameInTable="columnTotalSeatNo" type="xs:int" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="ShowTime" msprop:Generator_RowEvHandlerName="ShowTimeRowChangeEventHandler" msprop:Generator_RowDeletedName="ShowTimeRowDeleted" msprop:Generator_RowDeletingName="ShowTimeRowDeleting" msprop:Generator_RowEvArgName="ShowTimeRowChangeEvent" msprop:Generator_TablePropName="ShowTime" msprop:Generator_RowChangedName="ShowTimeRowChanged" msprop:Generator_UserTableName="ShowTime" msprop:Generator_RowChangingName="ShowTimeRowChanging" msprop:Generator_RowClassName="ShowTimeRow" msprop:Generator_TableClassName="ShowTimeDataTable" msprop:Generator_TableVarName="tableShowTime">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ShowTimeId" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnPropNameInTable="ShowTimeIdColumn" msprop:Generator_ColumnPropNameInRow="ShowTimeId" msprop:Generator_UserColumnName="ShowTimeId" msprop:Generator_ColumnVarNameInTable="columnShowTimeId" type="xs:int" />
+              <xs:element name="MovieId" msprop:Generator_ColumnPropNameInTable="MovieIdColumn" msprop:Generator_ColumnPropNameInRow="MovieId" msprop:Generator_UserColumnName="MovieId" msprop:Generator_ColumnVarNameInTable="columnMovieId" type="xs:int" />
+              <xs:element name="ScreenRoomId" msprop:Generator_ColumnPropNameInTable="ScreenRoomIdColumn" msprop:Generator_ColumnPropNameInRow="ScreenRoomId" msprop:Generator_UserColumnName="ScreenRoomId" msprop:Generator_ColumnVarNameInTable="columnScreenRoomId" type="xs:int" />
+              <xs:element name="Time" msprop:Generator_ColumnPropNameInTable="TimeColumn" msprop:Generator_ColumnPropNameInRow="Time" msprop:Generator_UserColumnName="Time" msprop:Generator_ColumnVarNameInTable="columnTime" type="xs:dateTime" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Ticket" msprop:Generator_RowEvHandlerName="TicketRowChangeEventHandler" msprop:Generator_RowDeletedName="TicketRowDeleted" msprop:Generator_RowDeletingName="TicketRowDeleting" msprop:Generator_RowEvArgName="TicketRowChangeEvent" msprop:Generator_TablePropName="Ticket" msprop:Generator_RowChangedName="TicketRowChanged" msprop:Generator_UserTableName="Ticket" msprop:Generator_RowChangingName="TicketRowChanging" msprop:Generator_RowClassName="TicketRow" msprop:Generator_TableClassName="TicketDataTable" msprop:Generator_TableVarName="tableTicket">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ticketId" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnPropNameInTable="ticketIdColumn" msprop:Generator_ColumnPropNameInRow="ticketId" msprop:Generator_UserColumnName="ticketId" msprop:Generator_ColumnVarNameInTable="columnticketId" type="xs:int" />
+              <xs:element name="E_ticket" msprop:Generator_ColumnPropNameInTable="E_ticketColumn" msprop:Generator_ColumnPropNameInRow="E_ticket" msprop:Generator_UserColumnName="E_ticket" msprop:Generator_ColumnVarNameInTable="columnE_ticket" type="xs:int" />
+              <xs:element name="availability" msprop:Generator_ColumnPropNameInTable="availabilityColumn" msprop:Generator_ColumnPropNameInRow="availability" msprop:Generator_UserColumnName="availability" msprop:Generator_ColumnVarNameInTable="columnavailability">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="50" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="Password" msprop:Generator_UserColumnName="Password" msprop:Generator_ColumnPropNameInTable="PasswordColumn" msprop:Generator_ColumnPropNameInRow="Password" msprop:Generator_ColumnVarNameInTable="columnPassword" minOccurs="0">
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="User" msprop:Generator_RowEvHandlerName="UserRowChangeEventHandler" msprop:Generator_RowDeletedName="UserRowDeleted" msprop:Generator_RowDeletingName="UserRowDeleting" msprop:Generator_RowEvArgName="UserRowChangeEvent" msprop:Generator_TablePropName="User" msprop:Generator_RowChangedName="UserRowChanged" msprop:Generator_UserTableName="User" msprop:Generator_RowChangingName="UserRowChanging" msprop:Generator_RowClassName="UserRow" msprop:Generator_TableClassName="UserDataTable" msprop:Generator_TableVarName="tableUser">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="UserId" msprop:Generator_ColumnPropNameInTable="UserIdColumn" msprop:Generator_ColumnPropNameInRow="UserId" msprop:Generator_UserColumnName="UserId" msprop:Generator_ColumnVarNameInTable="columnUserId" type="xs:int" />
+              <xs:element name="Username" msprop:Generator_ColumnPropNameInTable="UsernameColumn" msprop:Generator_ColumnPropNameInRow="Username" msprop:Generator_UserColumnName="Username" msprop:Generator_ColumnVarNameInTable="columnUsername" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Password" msprop:Generator_ColumnPropNameInTable="PasswordColumn" msprop:Generator_ColumnPropNameInRow="Password" msprop:Generator_UserColumnName="Password" msprop:Generator_ColumnVarNameInTable="columnPassword" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="50" />
@@ -563,10 +563,12 @@ SELECT UserId, Username, Password FROM [User] WHERE (UserId = @UserId)</CommandT
   </xs:element>
   <xs:annotation>
     <xs:appinfo>
-      <msdata:Relationship name="FK_MovieTicketUser" msdata:parent="Ticket" msdata:child="MovieTicketUser" msdata:parentkey="ticketId" msdata:childkey="TicketId" msprop:Generator_UserParentTable="Ticket" msprop:Generator_UserChildTable="MovieTicketUser" msprop:Generator_RelationVarName="relationFK_MovieTicketUser" msprop:Generator_ChildPropName="GetMovieTicketUserRows" msprop:Generator_ParentPropName="TicketRow" msprop:Generator_UserRelationName="FK_MovieTicketUser" />
-      <msdata:Relationship name="FK_ScreenRoom_Movie" msdata:parent="Movies" msdata:child="ScreenRoom" msdata:parentkey="MovieId" msdata:childkey="MovieId" msprop:Generator_UserParentTable="Movies" msprop:Generator_UserChildTable="ScreenRoom" msprop:Generator_RelationVarName="relationFK_ScreenRoom_Movie" msprop:Generator_ChildPropName="GetScreenRoomRows" msprop:Generator_UserRelationName="FK_ScreenRoom_Movie" msprop:Generator_ParentPropName="MoviesRow" />
-      <msdata:Relationship name="fk_screenroom" msdata:parent="ScreenRoom" msdata:child="ShowTime" msdata:parentkey="ScreenRoomId" msdata:childkey="ScreenRoomId" msprop:Generator_UserParentTable="ScreenRoom" msprop:Generator_UserChildTable="ShowTime" msprop:Generator_RelationVarName="relationfk_screenroom" msprop:Generator_ChildPropName="GetShowTimeRows" msprop:Generator_UserRelationName="fk_screenroom" msprop:Generator_ParentPropName="ScreenRoomRow" />
-      <msdata:Relationship name="User_MovieTicketUser" msdata:parent="User" msdata:child="MovieTicketUser" msdata:parentkey="UserId" msdata:childkey="UserId" msprop:Generator_UserParentTable="User" msprop:Generator_UserChildTable="MovieTicketUser" msprop:Generator_RelationVarName="relationUser_MovieTicketUser" msprop:Generator_UserRelationName="User_MovieTicketUser" msprop:Generator_ChildPropName="GetMovieTicketUserRows" msprop:Generator_ParentPropName="UserRow" />
+      <msdata:Relationship name="FK_MovieTicketUser" msdata:parent="Ticket" msdata:child="MovieTicketUser" msdata:parentkey="ticketId" msdata:childkey="TicketId" msprop:Generator_UserParentTable="Ticket" msprop:Generator_UserChildTable="MovieTicketUser" msprop:Generator_RelationVarName="relationFK_MovieTicketUser" msprop:Generator_ChildPropName="GetMovieTicketUserRows" msprop:Generator_UserRelationName="FK_MovieTicketUser" msprop:Generator_ParentPropName="TicketRow" />
+      <msdata:Relationship name="FK_ScreenRoom_Movie" msdata:parent="Movies" msdata:child="ScreenRoom" msdata:parentkey="MovieId" msdata:childkey="MovieId" msprop:Generator_UserParentTable="Movies" msprop:Generator_UserChildTable="ScreenRoom" msprop:Generator_RelationVarName="relationFK_ScreenRoom_Movie" msprop:Generator_ChildPropName="GetScreenRoomRows" msprop:Generator_ParentPropName="MoviesRow" msprop:Generator_UserRelationName="FK_ScreenRoom_Movie" />
+      <msdata:Relationship name="fk_screenroom" msdata:parent="ScreenRoom" msdata:child="ShowTime" msdata:parentkey="ScreenRoomId" msdata:childkey="ScreenRoomId" msprop:Generator_UserParentTable="ScreenRoom" msprop:Generator_UserChildTable="ShowTime" msprop:Generator_RelationVarName="relationfk_screenroom" msprop:Generator_ChildPropName="GetShowTimeRows" msprop:Generator_ParentPropName="ScreenRoomRow" msprop:Generator_UserRelationName="fk_screenroom" />
+      <msdata:Relationship name="User_MovieTicketUser" msdata:parent="User" msdata:child="MovieTicketUser" msdata:parentkey="UserId" msdata:childkey="UserId" msprop:Generator_UserParentTable="User" msprop:Generator_UserChildTable="MovieTicketUser" msprop:Generator_RelationVarName="relationUser_MovieTicketUser" msprop:Generator_ChildPropName="GetMovieTicketUserRows" msprop:Generator_ParentPropName="UserRow" msprop:Generator_UserRelationName="User_MovieTicketUser" />
+      <msdata:Relationship name="Movies_MovieTicketUser" msdata:parent="Movies" msdata:child="MovieTicketUser" msdata:parentkey="MovieId" msdata:childkey="MovieId" msprop:Generator_UserParentTable="Movies" msprop:Generator_UserChildTable="MovieTicketUser" msprop:Generator_RelationVarName="relationMovies_MovieTicketUser" msprop:Generator_ChildPropName="GetMovieTicketUserRows" msprop:Generator_ParentPropName="MoviesRow" msprop:Generator_UserRelationName="Movies_MovieTicketUser" />
+      <msdata:Relationship name="ShowTime_Movies" msdata:parent="ShowTime" msdata:child="Movies" msdata:parentkey="MovieId" msdata:childkey="MovieId" msprop:Generator_UserParentTable="ShowTime" msprop:Generator_UserChildTable="Movies" msprop:Generator_RelationVarName="relationShowTime_Movies" msprop:Generator_UserRelationName="ShowTime_Movies" msprop:Generator_ChildPropName="GetMoviesRows" msprop:Generator_ParentPropName="ShowTimeRow" />
     </xs:appinfo>
   </xs:annotation>
 </xs:schema>
