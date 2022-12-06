@@ -115,7 +115,7 @@
             this.timeOutputLabel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.timeOutputLabel.Location = new System.Drawing.Point(169, 399);
             this.timeOutputLabel.Name = "timeOutputLabel";
-            this.timeOutputLabel.Size = new System.Drawing.Size(100, 23);
+            this.timeOutputLabel.Size = new System.Drawing.Size(212, 23);
             this.timeOutputLabel.TabIndex = 7;
             // 
             // roomNoLabel
@@ -153,7 +153,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.ClientSize = new System.Drawing.Size(353, 603);
+            this.ClientSize = new System.Drawing.Size(405, 603);
             this.Controls.Add(this.closeButton);
             this.Controls.Add(this.roomNoOutputlabel);
             this.Controls.Add(this.roomNoLabel);

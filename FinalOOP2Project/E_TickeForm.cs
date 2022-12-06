@@ -17,12 +17,13 @@ namespace FinalOOP2Project
        
         
        
-        public E_TickeForm(string text,int ticketNo,int roomNo)
+        public E_TickeForm(string text,int ticketNo,int roomNo,DateTime movieShowTime)
         {
             InitializeComponent();
             movieOutputLabel.Text = text;
             ticketNoOutputLabel.Text=ticketNo.ToString();
             roomNoOutputlabel.Text=roomNo.ToString();
+            timeOutputLabel.Text=movieShowTime.ToString();
             
         }
 
