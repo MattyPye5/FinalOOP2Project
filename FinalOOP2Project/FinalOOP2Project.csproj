@@ -127,6 +127,7 @@
       <DependentUpon>ScreenRoomForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Client_Ticket.cs" />
+    <Compile Include="ShowTimeClass.cs" />
     <Compile Include="TicketForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -199,6 +200,7 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
     <None Include="stylecop.json" />
+    <None Include="stylecop1.json" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
