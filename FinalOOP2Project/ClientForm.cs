@@ -18,10 +18,11 @@ namespace FinalOOP2Project
         List<string> actorList = new List<string>();
         List<int> yearList = new List<int>();
         List<int> screenRoomList = new List<int>();
-        List<string> showtimeList = new List<string>();
+        List<DateTime> showtimeList = new List<DateTime>();
         Screen_Room myRoom = new Screen_Room();
         ListViewItem list = new ListViewItem();
         Movie myMovie = new Movie();
+        ShowtimeClass time=new ShowtimeClass();
 
         // Client_Ticket ticket=new Client_Ticket();
 
@@ -40,6 +41,7 @@ namespace FinalOOP2Project
                 actorList = myMovie.GetActor();
                 yearList = myMovie.GetDateOfRelease();
                 screenRoomList = myRoom.GetRoomNo();
+                showtimeList=time.GetShowTime();
                 try
                 {
                     for (int i = 0; i <= movieNameList.Count; i++)
@@ -50,6 +52,7 @@ namespace FinalOOP2Project
                         listi.SubItems.Add(actorList[i]);
                         listi.SubItems.Add(yearList[i].ToString());
                         listi.SubItems.Add(screenRoomList[i].ToString());
+                        listi.SubItems.Add(showtimeList[i].ToString());
 
                         listView.Items.Add(listi);
 
@@ -76,6 +79,7 @@ namespace FinalOOP2Project
             string movieName="";
             int ticket = 0;
             int room=0;
+            DateTime movieShowTime = DateTime.Now;
 
 
             for (int i = 0; i < listView.Items.Count; i++)
@@ -97,7 +101,15 @@ namespace FinalOOP2Project
                         var ticketid = from MovieTicketUser in db.MovieTicketUsers
                                        where MovieTicketUser.MovieId.Equals(str)
                                        select MovieTicketUser.TicketId;
-                       
+                       var time=from ShowTime in db.ShowTimes
+                                where ShowTime.MovieId.Equals(str)
+                                select ShowTime.Time;
+                        foreach(var date in time)
+                        {
+                            MessageBox.Show("date" + date);
+                            movieShowTime = (DateTime)date;
+                        }
+                                
 
                         foreach (var tic in ticketid)
                         {
@@ -131,7 +143,7 @@ namespace FinalOOP2Project
                                     {
                                         room = roomno;
                                     }
-                                    E_TickeForm form = new E_TickeForm(movieName, ticket, room);
+                                    E_TickeForm form = new E_TickeForm(movieName, ticket, room,movieShowTime);
                                     form.ShowDialog();
                                 }
                             }
