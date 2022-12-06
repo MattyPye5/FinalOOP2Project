@@ -30,6 +30,7 @@
       <Column Name="MovieId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="RoomNo" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="TotalSeatNo" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="ScreenRoom_ShowTime" Member="ShowTimes" ThisKey="ScreenRoomId" OtherKey="ScreenRoomId" Type="ShowTime" />
       <Association Name="Movies_ScreenRoom" Member="Movies" Storage="_Movie" ThisKey="MovieId" OtherKey="MovieId" Type="Movies" IsForeignKey="true" />
     </Type>
   </Table>
@@ -47,6 +48,15 @@
       <Column Name="TicketId" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="UserId" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Association Name="Ticket_MovieTicketUser" Member="Ticket" ThisKey="TicketId" OtherKey="ticketId" Type="Ticket" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ShowTime" Member="ShowTimes">
+    <Type Name="ShowTime">
+      <Column Name="ShowTimeId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="MovieId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ScreenRoomId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Time" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Association Name="ScreenRoom_ShowTime" Member="ScreenRoom" ThisKey="ScreenRoomId" OtherKey="ScreenRoomId" Type="ScreenRoom" IsForeignKey="true" />
     </Type>
   </Table>
 </Database>
