@@ -31,12 +31,14 @@ namespace FinalOOP2Project
 
         private void moviesButton_Click(object sender, EventArgs e)
         {
-
+            ManagerMovieListForm myMovies = new ManagerMovieListForm();
+            myMovies.Show();
         }
 
         private void showtimeButton_Click(object sender, EventArgs e)
         {
-            
+            ManagerShowTimeForm myShowTime = new ManagerShowTimeForm();
+            myShowTime.ShowDialog();
         }
 
         private void exitButton_Click(object sender, EventArgs e)
