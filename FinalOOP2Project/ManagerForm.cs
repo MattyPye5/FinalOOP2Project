@@ -36,7 +36,8 @@ namespace FinalOOP2Project
 
         private void showtimeButton_Click(object sender, EventArgs e)
         {
-            
+            ManagerShowTimeForm myShowTime = new ManagerShowTimeForm();
+            myShowTime.ShowDialog();
         }
 
         private void exitButton_Click(object sender, EventArgs e)
