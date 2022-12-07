@@ -100,6 +100,18 @@
     <Compile Include="ManagerLogin.Designer.cs">
       <DependentUpon>ManagerLogin.cs</DependentUpon>
     </Compile>
+    <Compile Include="ManagerMovieListForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ManagerMovieListForm.Designer.cs">
+      <DependentUpon>ManagerMovieListForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ManagerShowTimeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ManagerShowTimeForm.Designer.cs">
+      <DependentUpon>ManagerShowTimeForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Movie.cs" />
     <Compile Include="MovieTheatreDataClass.designer.cs">
       <AutoGen>True</AutoGen>
@@ -151,6 +163,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ManagerLogin.resx">
       <DependentUpon>ManagerLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ManagerMovieListForm.resx">
+      <DependentUpon>ManagerMovieListForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ManagerShowTimeForm.resx">
+      <DependentUpon>ManagerShowTimeForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

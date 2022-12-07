@@ -31,5 +31,10 @@ namespace FinalOOP2Project
             this.showTimeTableAdapter.Fill(this.movie_FinalDB_ProjectDataSet.ShowTime);
 
         }
+
+        private void CloseButton_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }
