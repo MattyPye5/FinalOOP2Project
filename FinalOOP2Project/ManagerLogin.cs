@@ -35,7 +35,7 @@ namespace FinalOOP2Project
                                  select u).First();
                     if (login.ManagerUsername == userManagerTextBox.Text && login.ManagerPassword == passManagerTextBox.Text)
                     {
-                        MessageBox.Show("YESSSS!!! BUT FOR MANAGER");
+                        //MessageBox.Show("YESSSS!!! BUT FOR MANAGER");
                         ManagerForm manager = new ManagerForm();
                         manager.ShowDialog();
                     }
@@ -49,10 +49,5 @@ namespace FinalOOP2Project
             {
                 MessageBox.Show("Incorrect Username or Password");
         }  }
-
-        private void ManagerLogin_Load(object sender, EventArgs e)
-        {
-
-        }
     }
 }
