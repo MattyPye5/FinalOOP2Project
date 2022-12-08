@@ -6,7 +6,7 @@
     /// <summary>
     /// Movie Class.
     /// </summary>
-    internal class Movie
+    public class Movie
     {
         /// <summary>
         /// Creating Lists accoiated with Movie Properties

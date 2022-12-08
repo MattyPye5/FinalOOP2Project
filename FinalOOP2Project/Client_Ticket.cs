@@ -3,7 +3,7 @@
     /// <summary>
     ///  Client Ticket Class.
     /// </summary>
-    internal class Client_Ticket
+    public class Client_Ticket
     {
         /// <summary>
         ///  Creates new Instance of Client Form.

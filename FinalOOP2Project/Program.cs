@@ -6,7 +6,7 @@
     /// <summary>
     /// Controls and starts Program.
     /// </summary>
-    internal static class Program
+    public static class Program
     {
         /// <summary>
         /// The main entry point for the application.
