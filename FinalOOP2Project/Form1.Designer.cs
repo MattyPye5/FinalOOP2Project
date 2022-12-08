@@ -99,6 +99,7 @@
             this.passTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.passTextBox.Location = new System.Drawing.Point(20, 248);
             this.passTextBox.Name = "passTextBox";
+            this.passTextBox.PasswordChar = '*';
             this.passTextBox.Size = new System.Drawing.Size(269, 35);
             this.passTextBox.TabIndex = 10;
             // 

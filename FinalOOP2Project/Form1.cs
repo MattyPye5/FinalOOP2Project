@@ -1,23 +1,22 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-
-namespace FinalOOP2Project
+﻿namespace FinalOOP2Project
 {
+    using System;
+    using System.Data;
+    using System.Linq;
+    using System.Windows.Forms;
+
+    /// <summary>
+    /// Main Form of the Application.
+    /// </summary>
     public partial class Form1 : Form
     {
         /// <summary>
+        /// Initializes a new instance of the <see cref="Form1"/> class.
         /// This is the constructor method.
         /// </summary>
         public Form1()
         {
-            InitializeComponent();
+            this.InitializeComponent();
         }
 
         /// <summary>
@@ -32,34 +31,40 @@ namespace FinalOOP2Project
         /// <param name="e">It contains the event data.</param>
         private void loginButton_Click(object sender, EventArgs e)
         {
-
+            // Try/Catch for checking for empty fields.
             try
             {
-                if (userTextBox.Text == "")
+                // Checks for Empty Strings
+                if (userTextBox.Text == string.Empty)
                 {
                     MessageBox.Show("Please enter the username");
                 }
-                else if (passTextBox.Text == "")
+                else if (passTextBox.Text == string.Empty)
                 {
                     MessageBox.Show("Please enter the password");
                 }
                 else
                 {
+                    // Checks If username and Password are in database
                     var login = (from u in db.Users
                                  where u.Username == userTextBox.Text
                                  select u).First();
                     if (login.Username == userTextBox.Text && login.Password == passTextBox.Text)
                     {
-                        MessageBox.Show("YESSSS!!!");
-                        ClientForm cf=new ClientForm();
+                        // Opens Main Client Form.
+                        ClientForm cf = new ClientForm();
                         cf.ShowDialog();
                     }
+
+                    // Exception catch.
                     else
                     {
                         MessageBox.Show("Incorrect Username or Password");
                     }
                 }
             }
+
+            // Exception catch.
             catch (Exception ex)
             {
                 MessageBox.Show("Incorrect Username or Password");

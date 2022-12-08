@@ -1,41 +1,43 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Security.Cryptography;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-
-namespace FinalOOP2Project
+﻿namespace FinalOOP2Project
 {
-   
+    /// <summary>
+    ///  Client Ticket Class.
+    /// </summary>
     internal class Client_Ticket
     {
-        //MovieTheatreDataClassDataContext db = new MovieTheatreDataClassDataContext();
-        ClientForm form= new ClientForm();
-        public Client_Ticket() { }
-        public int TicketId { get; set; }
-        public int ETicket { get; set; }
+        /// <summary>
+        ///  Creates new Instance of Client Form.
+        /// </summary>
+        ClientForm form = new ClientForm();
 
-        public string Availability { get; }
-
-
-        public void TicketsNo()
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Client_Ticket"/> class.
+        /// Method For Client Ticket.
+        /// </summary>
+        public Client_Ticket()
         {
-            
-               
-           
-
-                    
-
-                }
-            }
-                        
-
-           
         }
 
+        /// <summary>
+        /// Creates Get/Set Accessors For Client Ticket Id Property.
+        /// </summary>
+        public int TicketId { get; set; }
 
-    
-   
+        /// <summary>
+        /// Creates Get/Set Accessors For E-Ticket Property.
+        /// </summary>
+        public int ETicket { get; set; }
 
+        /// <summary>
+        /// Creates Get Accessors For Ticket Avaibality Property.
+        /// </summary>
+        public string Availability { get; }
+
+        /// <summary>
+        /// Method For number Of Tickets.
+        /// </summary>
+        public void TicketsNo()
+        {
+        }
+    }
+}

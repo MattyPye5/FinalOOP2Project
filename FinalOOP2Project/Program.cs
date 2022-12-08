@@ -1,11 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-
-namespace FinalOOP2Project
+﻿namespace FinalOOP2Project
 {
+    using System;
+    using System.Windows.Forms;
+
+    /// <summary>
+    /// Controls and starts Program.
+    /// </summary>
     internal static class Program
     {
         /// <summary>
