@@ -146,7 +146,7 @@
                                 }
                                 else if (available.Equals("available"))
                                 {
-                                    MessageBox.Show("available", available);
+                                    MessageBox.Show("available ticket", available);
                                     var ticketNo = from Ticket in db.Tickets
                                                    where Ticket.ticketId.Equals(tic)
                                                    select Ticket.E_ticket;

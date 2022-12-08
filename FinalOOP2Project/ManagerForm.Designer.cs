@@ -42,9 +42,10 @@
             this.exitButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.exitButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.exitButton.ForeColor = System.Drawing.Color.IndianRed;
-            this.exitButton.Location = new System.Drawing.Point(274, 316);
+            this.exitButton.Location = new System.Drawing.Point(206, 257);
+            this.exitButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.exitButton.Name = "exitButton";
-            this.exitButton.Size = new System.Drawing.Size(182, 53);
+            this.exitButton.Size = new System.Drawing.Size(136, 43);
             this.exitButton.TabIndex = 17;
             this.exitButton.Text = "Exit";
             this.exitButton.UseVisualStyleBackColor = true;
@@ -55,21 +56,24 @@
             this.clientButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.clientButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.clientButton.ForeColor = System.Drawing.Color.IndianRed;
-            this.clientButton.Location = new System.Drawing.Point(274, 249);
+            this.clientButton.Location = new System.Drawing.Point(206, 202);
+            this.clientButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.clientButton.Name = "clientButton";
-            this.clientButton.Size = new System.Drawing.Size(182, 53);
+            this.clientButton.Size = new System.Drawing.Size(136, 43);
             this.clientButton.TabIndex = 16;
             this.clientButton.Text = "Clients";
             this.clientButton.UseVisualStyleBackColor = true;
+            this.clientButton.Click += new System.EventHandler(this.clientButton_Click);
             // 
             // showtimeButton
             // 
             this.showtimeButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.showtimeButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.showtimeButton.ForeColor = System.Drawing.Color.IndianRed;
-            this.showtimeButton.Location = new System.Drawing.Point(61, 170);
+            this.showtimeButton.Location = new System.Drawing.Point(46, 138);
+            this.showtimeButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.showtimeButton.Name = "showtimeButton";
-            this.showtimeButton.Size = new System.Drawing.Size(182, 53);
+            this.showtimeButton.Size = new System.Drawing.Size(136, 43);
             this.showtimeButton.TabIndex = 15;
             this.showtimeButton.Text = "Showtime ";
             this.showtimeButton.UseVisualStyleBackColor = true;
@@ -80,9 +84,10 @@
             this.ticketsButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.ticketsButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ticketsButton.ForeColor = System.Drawing.Color.IndianRed;
-            this.ticketsButton.Location = new System.Drawing.Point(433, 158);
+            this.ticketsButton.Location = new System.Drawing.Point(325, 128);
+            this.ticketsButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.ticketsButton.Name = "ticketsButton";
-            this.ticketsButton.Size = new System.Drawing.Size(182, 53);
+            this.ticketsButton.Size = new System.Drawing.Size(136, 43);
             this.ticketsButton.TabIndex = 14;
             this.ticketsButton.Text = "Tickets";
             this.ticketsButton.UseVisualStyleBackColor = true;
@@ -93,9 +98,10 @@
             this.screenRoomButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.screenRoomButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.screenRoomButton.ForeColor = System.Drawing.Color.IndianRed;
-            this.screenRoomButton.Location = new System.Drawing.Point(433, 57);
+            this.screenRoomButton.Location = new System.Drawing.Point(325, 46);
+            this.screenRoomButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.screenRoomButton.Name = "screenRoomButton";
-            this.screenRoomButton.Size = new System.Drawing.Size(182, 53);
+            this.screenRoomButton.Size = new System.Drawing.Size(136, 43);
             this.screenRoomButton.TabIndex = 13;
             this.screenRoomButton.Text = "Screen Room";
             this.screenRoomButton.UseVisualStyleBackColor = true;
@@ -106,9 +112,10 @@
             this.moviesButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.moviesButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.moviesButton.ForeColor = System.Drawing.Color.IndianRed;
-            this.moviesButton.Location = new System.Drawing.Point(61, 57);
+            this.moviesButton.Location = new System.Drawing.Point(46, 46);
+            this.moviesButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.moviesButton.Name = "moviesButton";
-            this.moviesButton.Size = new System.Drawing.Size(182, 53);
+            this.moviesButton.Size = new System.Drawing.Size(136, 43);
             this.moviesButton.TabIndex = 12;
             this.moviesButton.Text = "Movies";
             this.moviesButton.UseVisualStyleBackColor = true;
@@ -116,16 +123,17 @@
             // 
             // ManagerForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
-            this.ClientSize = new System.Drawing.Size(692, 450);
+            this.ClientSize = new System.Drawing.Size(519, 366);
             this.Controls.Add(this.exitButton);
             this.Controls.Add(this.clientButton);
             this.Controls.Add(this.showtimeButton);
             this.Controls.Add(this.ticketsButton);
             this.Controls.Add(this.screenRoomButton);
             this.Controls.Add(this.moviesButton);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "ManagerForm";
             this.Text = "managerForm";
             this.ResumeLayout(false);

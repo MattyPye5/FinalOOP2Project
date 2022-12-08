@@ -71,5 +71,16 @@
             // Closes the form
             this.Close();
         }
+
+        /// <summary>
+        /// This Method opens Client Form.
+        /// </summary>
+        /// <param name="sender">It contains a reference to the control/object that raised the event.</param>
+        /// <param name="e">It contains the event data.</param>
+        private void clientButton_Click(object sender, EventArgs e)
+        {
+            ManagerClientForm myManagerClientForm = new ManagerClientForm();
+            myManagerClientForm.ShowDialog();
+        }
     }
 }

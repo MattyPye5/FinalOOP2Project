@@ -7,7 +7,7 @@
     /// <summary>
     /// Showtime Class.
     /// </summary>
-    class ShowtimeClass
+    public class ShowtimeClass
     {
         /// <summary>
         /// Initalizes DataclassDataContext to access LINQ Features.

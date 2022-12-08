@@ -6,7 +6,7 @@
     /// <summary>
     /// Screen Room Class.
     /// </summary>
-    internal class Screen_Room
+    public class Screen_Room
     {
         /// <summary>
         /// New Instance of Movies.
