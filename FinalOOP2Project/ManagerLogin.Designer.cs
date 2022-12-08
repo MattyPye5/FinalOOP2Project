@@ -73,6 +73,7 @@
             this.passManagerTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.passManagerTextBox.Location = new System.Drawing.Point(19, 248);
             this.passManagerTextBox.Name = "passManagerTextBox";
+            this.passManagerTextBox.PasswordChar = '*';
             this.passManagerTextBox.Size = new System.Drawing.Size(269, 35);
             this.passManagerTextBox.TabIndex = 18;
             // 

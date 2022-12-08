@@ -1,20 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Security.Cryptography.X509Certificates;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
-
-namespace FinalOOP2Project
+﻿namespace FinalOOP2Project
 {
+    using System;
+    using System.Windows.Forms;
+
+    /// <summary>
+    /// E-Ticket Form Class.
+    /// </summary>
     public partial class E_TickeForm : Form
     {
         /// <summary>
+        /// Initializes a new instance of the <see cref="E_TickeForm"/> class.
         /// This method displays the movie name, ticketNo(ticket id), roomNo and date time of the movie choosen.
         /// </summary>
         /// <param name="text">Name of movie.</param>
@@ -24,10 +19,11 @@ namespace FinalOOP2Project
         public E_TickeForm(string text, int ticketNo, int roomNo, DateTime movieShowTime)
         {
             InitializeComponent();
-            movieOutputLabel.Text = text;
-            ticketNoOutputLabel.Text = ticketNo.ToString();
-            roomNoOutputlabel.Text = roomNo.ToString();
-            timeOutputLabel.Text = movieShowTime.ToString();
+
+            this.movieOutputLabel.Text = text;
+            this.ticketNoOutputLabel.Text = ticketNo.ToString();
+            this.roomNoOutputlabel.Text = roomNo.ToString();
+            this.timeOutputLabel.Text = movieShowTime.ToString();
 
         }
 
@@ -38,7 +34,7 @@ namespace FinalOOP2Project
         /// <param name="e">It contains the event data.</param>
         private void closeButton_Click(object sender, EventArgs e)
         {
-            // It closes the form
+            // closes the form
             this.Close();
         }
     }

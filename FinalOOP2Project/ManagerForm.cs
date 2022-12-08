@@ -1,23 +1,20 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-
-namespace FinalOOP2Project
+﻿namespace FinalOOP2Project
 {
+    using System;
+    using System.Windows.Forms;
+
+    /// <summary>
+    ///  Main Manager Form Class.
+    /// </summary>
     public partial class ManagerForm : Form
     {
         /// <summary>
+        /// Initializes a new instance of the <see cref="ManagerForm"/> class.
         /// This is the constructor method.
         /// </summary>
         public ManagerForm()
         {
-            InitializeComponent();
+            this.InitializeComponent();
         }
 
         /// <summary>
@@ -71,7 +68,7 @@ namespace FinalOOP2Project
         /// <param name="e">It contains the event data.</param>
         private void exitButton_Click(object sender, EventArgs e)
         {
-            //Close the form
+            // Closes the form
             this.Close();
         }
     }
